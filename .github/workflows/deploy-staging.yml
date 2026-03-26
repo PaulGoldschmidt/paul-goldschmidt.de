@@ -1,0 +1,63 @@
+name: Deploy to Staging
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    uses: ./.github/workflows/build.yml
+    with:
+      environment: staging
+    secrets: inherit
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-24.04
+    environment: staging
+
+    env:
+      REGISTRY: ghcr.io
+      IMAGE_NAME: ${{ github.repository }}
+      DEPLOY_PATH: ${{ secrets.DEPLOY_PATH }}
+      NEXT_PUBLIC_TURNSTILE_SITE_KEY: ${{ secrets.NEXT_PUBLIC_TURNSTILE_SITE_KEY }}
+      NEXT_PUBLIC_NEWSLETTER_API_USERNAME: ${{ secrets.NEXT_PUBLIC_NEWSLETTER_API_USERNAME }}
+      NEXT_PUBLIC_NEWSLETTER_API_TOKEN: ${{ secrets.NEXT_PUBLIC_NEWSLETTER_API_TOKEN }}
+      NEXT_PUBLIC_NEWSLETTER_API_ENDPOINT: ${{ secrets.NEXT_PUBLIC_NEWSLETTER_API_ENDPOINT }}
+      NEXT_PUBLIC_NEWSLETTER_LIST_ID: ${{ secrets.NEXT_PUBLIC_NEWSLETTER_LIST_ID }}
+
+    steps:
+      - name: Install cloudflared
+        run: |
+          curl -fsSL https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb -o cloudflared.deb
+          sudo dpkg -i cloudflared.deb
+
+      - name: Configure SSH over cloudflared tunnel
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SERVER_PRIVATE_KEY }}" > ~/.ssh/id_deploy
+          chmod 600 ~/.ssh/id_deploy
+          cat >> ~/.ssh/config <<EOF
+          Host ${{ secrets.SERVER_HOST }}
+            User ${{ secrets.SERVER_USERNAME }}
+            IdentityFile ~/.ssh/id_deploy
+            StrictHostKeyChecking no
+            ProxyCommand cloudflared access ssh --hostname %h --id ${{ secrets.CF_ACCESS_CLIENT_ID }} --secret ${{ secrets.CF_ACCESS_CLIENT_SECRET }}
+          EOF
+
+      - name: Deploy to server
+        run: |
+          ssh -T ${{ secrets.SERVER_HOST }} << 'ENDSSH'
+            cd ${{ env.DEPLOY_PATH }}
+            export DOCKER_IMAGE="${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}"
+            docker compose down
+            docker pull $DOCKER_IMAGE:latest
+            DOCKER_IMAGE=$DOCKER_IMAGE \
+            NEXT_PUBLIC_TURNSTILE_SITE_KEY="${{ env.NEXT_PUBLIC_TURNSTILE_SITE_KEY }}" \
+            NEXT_PUBLIC_NEWSLETTER_API_USERNAME="${{ env.NEXT_PUBLIC_NEWSLETTER_API_USERNAME }}" \
+            NEXT_PUBLIC_NEWSLETTER_API_TOKEN="${{ env.NEXT_PUBLIC_NEWSLETTER_API_TOKEN }}" \
+            NEXT_PUBLIC_NEWSLETTER_API_ENDPOINT="${{ env.NEXT_PUBLIC_NEWSLETTER_API_ENDPOINT }}" \
+            NEXT_PUBLIC_NEWSLETTER_LIST_ID="${{ env.NEXT_PUBLIC_NEWSLETTER_LIST_ID }}" \
+            docker compose up -d
+          ENDSSH
