@@ -34,6 +34,14 @@ const navItems = [
   </nav>
 </header>
 
+<script>
+  import { WebHaptics } from "web-haptics";
+  const haptics = new WebHaptics();
+  document.querySelector(".avatar")?.addEventListener("click", () => {
+    haptics.trigger("medium");
+  });
+</script>
+
 <style>
   .inline-nav-separator {
     width: 100%;
