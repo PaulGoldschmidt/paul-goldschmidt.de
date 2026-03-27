@@ -44,3 +44,11 @@
     btn.addEventListener("click", toggle);
   })();
 </script>
+
+<script>
+  import { WebHaptics } from "web-haptics";
+  const haptics = new WebHaptics();
+  document.querySelector(".theme-toggle")?.addEventListener("click", () => {
+    haptics.trigger("light");
+  });
+</script>
