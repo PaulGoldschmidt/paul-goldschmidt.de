@@ -48,12 +48,13 @@ jobs:
 
       - name: Deploy to server
         run: |
-          ssh -T ${{ secrets.SERVER_HOST }} << 'ENDSSH'
+          ssh -T ${{ secrets.SERVER_HOST }} << ENDSSH
             cd ${{ env.DEPLOY_PATH }}
-            export DOCKER_IMAGE="${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}"
+            cat > .env <<'EOF'
+          DOCKER_IMAGE=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          TURNSTILE_SITE_KEY=${{ env.TURNSTILE_SITE_KEY }}
+          EOF
             docker compose down
-            docker pull $DOCKER_IMAGE:latest
-            DOCKER_IMAGE=$DOCKER_IMAGE \
-            TURNSTILE_SITE_KEY="${{ env.TURNSTILE_SITE_KEY }}" \
+            docker pull ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
             docker compose up -d
           ENDSSH
