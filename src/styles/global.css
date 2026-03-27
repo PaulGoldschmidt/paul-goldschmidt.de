@@ -254,17 +254,19 @@ a[href^="mailto"]::after {
 /* === Photography Grid === */
 .photo-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
   padding-top: 0.5rem;
 }
 
 .photo-grid img {
   width: 100%;
-  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
   display: block;
   cursor: pointer;
   background-color: var(--bg-secondary);
+  border-radius: 8px;
 }
 
 /* === Lightbox === */
@@ -283,10 +285,26 @@ a[href^="mailto"]::after {
   display: flex;
 }
 
-.lightbox img {
+.lightbox-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   max-width: 90vw;
   max-height: 90vh;
+}
+
+.lightbox-content img {
+  max-width: 100%;
+  max-height: 80vh;
   object-fit: contain;
+}
+
+.lightbox-subtitle {
+  color: #fff;
+  font-size: 0.875rem;
+  padding-top: 0.75rem;
+  text-align: center;
+  opacity: 0.8;
 }
 
 /* === Theme Toggle === */

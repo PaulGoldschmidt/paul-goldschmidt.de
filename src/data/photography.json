@@ -1,17 +1,38 @@
 [
   {
-    "src": "/img/photo-1.jpg",
-    "alt": "Sunset over Berlin skyline",
-    "title": "Berlin Sunset"
+    "src": "/img/showcase1.jpg",
+    "alt": "Showcase photo 1",
+    "title": "",
+    "subtitle": ""
   },
   {
-    "src": "/img/photo-2.jpg",
-    "alt": "Morning fog in the Alps",
-    "title": "Alpine Morning"
+    "src": "/img/showcase2.jpg",
+    "alt": "Showcase photo 2",
+    "title": "",
+    "subtitle": ""
   },
   {
-    "src": "/img/photo-3.jpg",
-    "alt": "Street scene in Tokyo",
-    "title": "Tokyo Streets"
+    "src": "/img/showcase3.jpg",
+    "alt": "Showcase photo 3",
+    "title": "",
+    "subtitle": ""
+  },
+  {
+    "src": "/img/showcase4.jpg",
+    "alt": "Showcase photo 4",
+    "title": "",
+    "subtitle": ""
+  },
+  {
+    "src": "/img/showcase5.jpg",
+    "alt": "Showcase photo 5",
+    "title": "",
+    "subtitle": ""
+  },
+  {
+    "src": "/img/showcase6.jpg",
+    "alt": "Showcase photo 6",
+    "title": "",
+    "subtitle": ""
   }
 ]

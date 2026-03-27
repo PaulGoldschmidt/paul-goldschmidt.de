@@ -10,33 +10,43 @@ import photos from "../data/photography.json";
         src={photo.src}
         alt={photo.alt}
         title={photo.title || ""}
+        data-subtitle={photo.subtitle || ""}
         loading="lazy"
         data-lightbox
       />
     ))}
   </div>
+  <p class="photo-note">More pictures can be found in my <a href="https://photos.paul-goldschmidt.de/gallery#o0A4UBnMbnB3mwyM9vDtjPI2">personal gallery</a>.</p>
 </section>
 
 <!-- Lightbox overlay -->
 <div class="lightbox" id="lightbox" role="dialog" aria-label="Photo viewer">
-  <img src="" alt="" />
+  <div class="lightbox-content">
+    <img src="" alt="" />
+    <p class="lightbox-subtitle"></p>
+  </div>
 </div>
 
 <script is:inline>
   (function () {
-    const lightbox = document.getElementById("lightbox");
+    var lightbox = document.getElementById("lightbox");
     if (!lightbox) return;
-    const lightboxImg = lightbox.querySelector("img");
+    var lightboxImg = lightbox.querySelector("img");
+    var lightboxSub = lightbox.querySelector(".lightbox-subtitle");
 
     document.querySelectorAll("[data-lightbox]").forEach(function (img) {
       img.addEventListener("click", function () {
         lightboxImg.src = img.src;
         lightboxImg.alt = img.alt;
+        var sub = img.getAttribute("data-subtitle") || "";
+        lightboxSub.textContent = sub;
+        lightboxSub.style.display = sub ? "block" : "none";
         lightbox.classList.add("active");
       });
     });
 
-    lightbox.addEventListener("click", function () {
+    lightbox.addEventListener("click", function (e) {
+      if (e.target === lightboxImg || e.target === lightboxSub) return;
       lightbox.classList.remove("active");
       lightboxImg.src = "";
     });
