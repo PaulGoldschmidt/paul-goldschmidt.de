@@ -1,0 +1,197 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? "";
+---
+
+<Layout title="Contact – Paul Goldschmidt">
+  <div class="page-wrapper">
+    <main class="legal">
+      <a href="/">&larr; Back</a>
+
+      <h1>Contact</h1>
+      <p>Send me a message and I'll get back to you.</p>
+
+      <form id="contact-form" novalidate>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="6" required></textarea>
+        </div>
+
+        <div
+          class="cf-turnstile"
+          data-sitekey={turnstileSiteKey}
+          data-theme="dark"
+        ></div>
+
+        <button type="submit" class="submit-btn">Send Message</button>
+        <p id="form-status" class="form-status" aria-live="polite"></p>
+      </form>
+    </main>
+  </div>
+</Layout>
+
+<script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
+<script is:inline>
+  (function () {
+    var form = document.getElementById("contact-form");
+    var status = document.getElementById("form-status");
+    var submitBtn = form.querySelector(".submit-btn");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      var name = form.querySelector("#name").value.trim();
+      var email = form.querySelector("#email").value.trim();
+      var message = form.querySelector("#message").value.trim();
+
+      if (!name || !email || !message) {
+        status.textContent = "Please fill in all fields.";
+        status.className = "form-status error";
+        return;
+      }
+
+      var turnstileResponse = form.querySelector(
+        '[name="cf-turnstile-response"]'
+      );
+      if (!turnstileResponse || !turnstileResponse.value) {
+        status.textContent = "Please complete the verification.";
+        status.className = "form-status error";
+        return;
+      }
+
+      submitBtn.disabled = true;
+      status.textContent = "Sending...";
+      status.className = "form-status";
+
+      var webhookUrl =
+        "https://discord.com/api/webhooks/1487027157250211871/CakDF_iG9pdJC9UUhJ3DExo3dDzTi8TKW25ef7Qkx_-atMP3ThcVeDMX3DvfefoVagmn";
+
+      fetch(webhookUrl, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          embeds: [
+            {
+              title: "New Contact Form Submission",
+              color: 5814783,
+              fields: [
+                { name: "Name", value: name, inline: true },
+                { name: "Email", value: email, inline: true },
+                { name: "Message", value: message },
+              ],
+              timestamp: new Date().toISOString(),
+            },
+          ],
+        }),
+      })
+        .then(function (res) {
+          if (res.ok) {
+            status.textContent = "Message sent successfully!";
+            status.className = "form-status success";
+            form.reset();
+            if (window.turnstile) window.turnstile.reset();
+          } else {
+            throw new Error("Failed");
+          }
+        })
+        .catch(function () {
+          status.textContent =
+            "Something went wrong. Please try again or email me directly.";
+          status.className = "form-status error";
+        })
+        .finally(function () {
+          submitBtn.disabled = false;
+        });
+    });
+  })();
+</script>
+
+<style>
+  .legal form {
+    padding-top: 1.5rem;
+    max-width: 480px;
+  }
+
+  .form-group {
+    padding-bottom: 1rem;
+  }
+
+  .form-group label {
+    display: block;
+    color: var(--text-primary);
+    padding-bottom: 0.25rem;
+    font-weight: 600;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 0.5rem;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    color: var(--text-primary);
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--text-tertiary);
+    border-radius: 4px;
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus {
+    outline: 2px solid var(--accent);
+    outline-offset: 1px;
+  }
+
+  .form-group textarea {
+    resize: vertical;
+  }
+
+  .cf-turnstile {
+    padding-bottom: 1rem;
+  }
+
+  .submit-btn {
+    background-color: var(--accent);
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+
+  .submit-btn:hover {
+    opacity: 0.9;
+  }
+
+  .submit-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .form-status {
+    padding-top: 0.75rem;
+    font-size: 0.875rem;
+  }
+
+  .form-status.success {
+    color: #4ade80;
+  }
+
+  .form-status.error {
+    color: #f87171;
+  }
+</style>

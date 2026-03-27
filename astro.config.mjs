@@ -5,5 +5,6 @@ export default defineConfig({
   redirects: {
     "/impressum": "/imprint",
     "/datenschutz": "/privacy",
+    "/kontakt": "/contact",
   },
 });
