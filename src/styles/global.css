@@ -196,6 +196,7 @@ a[href^="mailto"]::after {
   width: 44px;
   height: 44px;
   border-radius: 50%;
+  object-fit: cover;
   background-color: var(--bg-secondary);
 }
 
@@ -204,6 +205,13 @@ a[href^="mailto"]::after {
 }
 
 .vcard .subtitle {
+  color: var(--text-secondary);
+}
+
+/* === Intro === */
+.intro {
+  padding-top: 0.5rem;
+  padding-bottom: 1rem;
   color: var(--text-secondary);
 }
 
