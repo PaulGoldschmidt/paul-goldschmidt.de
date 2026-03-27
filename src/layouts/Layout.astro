@@ -13,11 +13,18 @@ const { title } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <script is:inline>
-      // Set theme before paint to avoid flash
       (function () {
+        // Set theme before paint to avoid flash
         const stored = localStorage.getItem("theme");
         if (stored) {
           document.documentElement.setAttribute("data-theme", stored);
+        }
+        // hehe
+        var now = new Date();
+        if (now.getMonth() === 3 && now.getDate() === 1) {
+          var s = document.createElement("style");
+          s.textContent = '@font-face { font-family: "Comic Sans Override"; src: url("/fonts/ComicSans.ttf") format("truetype"); font-display: swap; } body { font-family: "Comic Sans Override", "Comic Sans MS", cursive !important; }';
+          document.head.appendChild(s);
         }
       })();
     </script>
