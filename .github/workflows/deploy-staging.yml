@@ -23,7 +23,6 @@ jobs:
 
     env:
       REGISTRY: ghcr.io
-      IMAGE_NAME: ${{ github.repository }}
       DEPLOY_PATH: ${{ secrets.DEPLOY_PATH }}
       NEXT_PUBLIC_TURNSTILE_SITE_KEY: ${{ secrets.NEXT_PUBLIC_TURNSTILE_SITE_KEY }}
       NEXT_PUBLIC_NEWSLETTER_API_USERNAME: ${{ secrets.NEXT_PUBLIC_NEWSLETTER_API_USERNAME }}
@@ -32,6 +31,9 @@ jobs:
       NEXT_PUBLIC_NEWSLETTER_LIST_ID: ${{ secrets.NEXT_PUBLIC_NEWSLETTER_LIST_ID }}
 
     steps:
+      - name: Set image name
+        run: echo "IMAGE_NAME=${GITHUB_REPOSITORY,,}" >> "$GITHUB_ENV"
+
       - name: Install cloudflared
         run: |
           curl -fsSL https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb -o cloudflared.deb
