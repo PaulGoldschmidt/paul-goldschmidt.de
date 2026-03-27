@@ -3,6 +3,6 @@ services:
     image: ${DOCKER_IMAGE}:latest
     restart: unless-stopped
     ports:
-      - 127.0.0.1:2003:3000
+      - 127.0.0.1:2003:80
     environment:
       - TURNSTILE_SITE_KEY=${TURNSTILE_SITE_KEY}
