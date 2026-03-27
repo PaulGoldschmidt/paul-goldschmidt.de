@@ -1,0 +1,271 @@
+/* === Reset === */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* === Theme Variables === */
+:root {
+  /* Spacing base */
+  --line-height: 1.6;
+  --content-max-width: 720px;
+  --sidebar-width: 120px;
+  --label-width: 25%;
+
+  /* Dark mode (default) */
+  --bg: #1a2124;
+  --bg-secondary: #223336;
+  --text-primary: #fafbff;
+  --text-secondary: #a6b9ba;
+  --text-tertiary: #a2acaa;
+  --accent: #e02c92;
+}
+
+[data-theme="light"] {
+  --bg: #fafafa;
+  --bg-secondary: #eaeaea;
+  --text-primary: #02040a;
+  --text-secondary: #343840;
+  --text-tertiary: #4d595b;
+  --accent: #e18b09;
+}
+
+/* === Base === */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: ui-rounded, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif;
+  line-height: var(--line-height);
+  color: var(--text-secondary);
+  background-color: var(--bg);
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* === Typography === */
+h1, h2, h3, h4 {
+  color: var(--text-primary);
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+}
+
+a {
+  color: var(--text-primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+}
+
+a:hover {
+  text-decoration-color: var(--accent);
+}
+
+/* === Page Structure === */
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* === Sidebar (Desktop) === */
+.sidebar {
+  display: none;
+}
+
+@media screen and (min-width: 1024px) {
+  .sidebar {
+    display: block;
+    position: fixed;
+    top: 4rem;
+    left: 2rem;
+    width: var(--sidebar-width);
+  }
+
+  .sidebar nav {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 0.25rem;
+  }
+
+  .sidebar nav a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.875rem;
+  }
+
+  .sidebar nav a:hover {
+    color: var(--text-primary);
+  }
+}
+
+/* === Inline Nav (Mobile/Tablet) === */
+.inline-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  padding: 1rem 0;
+}
+
+.inline-nav a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.875rem;
+}
+
+.inline-nav a:hover {
+  color: var(--text-primary);
+}
+
+@media screen and (min-width: 1024px) {
+  .inline-nav {
+    display: none;
+  }
+}
+
+/* === Header === */
+.site-header {
+  padding-top: 3rem;
+  padding-bottom: 1rem;
+}
+
+.vcard {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.vcard .avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--bg-secondary);
+}
+
+.vcard h1 {
+  font-weight: 600;
+}
+
+.vcard .subtitle {
+  color: var(--text-secondary);
+}
+
+/* === Section Layout === */
+.section {
+  padding-top: 2rem;
+}
+
+.section h2 {
+  padding-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.section-grid {
+  display: grid;
+  grid-template-columns: var(--label-width) 1fr;
+  gap: 1rem;
+}
+
+/* === CV Entry === */
+.cv-label {
+  color: var(--text-tertiary);
+  font-size: 0.875rem;
+}
+
+.cv-content h3 {
+  font-weight: 600;
+}
+
+.cv-content p {
+  color: var(--text-secondary);
+}
+
+/* === Photography Grid === */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  padding-top: 0.5rem;
+}
+
+.photo-grid img {
+  width: 100%;
+  height: auto;
+  display: block;
+  cursor: pointer;
+  background-color: var(--bg-secondary);
+}
+
+/* === Lightbox === */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.9);
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.lightbox.active {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+}
+
+/* === Theme Toggle === */
+.theme-toggle {
+  background: none;
+  border: 1px solid var(--text-tertiary);
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  font-family: inherit;
+  border-radius: 4px;
+}
+
+.theme-toggle:hover {
+  color: var(--text-primary);
+  border-color: var(--text-primary);
+}
+
+/* === Footer === */
+.site-footer {
+  padding: 3rem 0;
+  color: var(--text-tertiary);
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+/* === Responsive: Mobile === */
+@media screen and (max-width: 799px) {
+  .section-grid {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+
+  .cv-label {
+    padding-top: 1rem;
+  }
+
+  .section h2 + .section-grid .cv-label:first-child {
+    padding-top: 0.5rem;
+  }
+}

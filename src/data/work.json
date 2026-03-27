@@ -1,0 +1,20 @@
+[
+  {
+    "years": "2024–Now",
+    "role": "Software Engineer",
+    "company": "Example Corp",
+    "description": "Working on distributed systems and infrastructure."
+  },
+  {
+    "years": "2022–2024",
+    "role": "Junior Developer",
+    "company": "Startup Inc",
+    "description": "Full-stack development on a SaaS product."
+  },
+  {
+    "years": "2020–2022",
+    "role": "Intern",
+    "company": "Tech GmbH",
+    "description": "Backend development and data engineering."
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "year": "2025",
+    "title": "Project Alpha",
+    "description": "A short description of what this project is about.",
+    "url": "https://example.com/project-alpha",
+    "image": null
+  },
+  {
+    "year": "2024",
+    "title": "Project Beta",
+    "description": "Another project with a brief explanation of its purpose and impact.",
+    "url": null,
+    "image": null
+  },
+  {
+    "year": "2023",
+    "title": "Project Gamma",
+    "description": "An earlier project demonstrating a different area of work.",
+    "url": "https://example.com/project-gamma",
+    "image": null
+  }
+]

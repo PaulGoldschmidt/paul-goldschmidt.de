@@ -1,0 +1,17 @@
+[
+  {
+    "src": "/img/photo-1.jpg",
+    "alt": "Sunset over Berlin skyline",
+    "title": "Berlin Sunset"
+  },
+  {
+    "src": "/img/photo-2.jpg",
+    "alt": "Morning fog in the Alps",
+    "title": "Alpine Morning"
+  },
+  {
+    "src": "/img/photo-3.jpg",
+    "alt": "Street scene in Tokyo",
+    "title": "Tokyo Streets"
+  }
+]

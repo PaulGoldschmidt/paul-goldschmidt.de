@@ -1,0 +1,100 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Sidebar from "../components/Sidebar.astro";
+import Section from "../components/Section.astro";
+import CVEntry from "../components/CVEntry.astro";
+import Photography from "../components/Photography.astro";
+import Footer from "../components/Footer.astro";
+
+import projects from "../data/projects.json";
+import work from "../data/work.json";
+import papers from "../data/papers.json";
+import blog from "../data/blog.json";
+import education from "../data/education.json";
+import other from "../data/other.json";
+---
+
+<Layout title="Paul Goldschmidt">
+  <div class="page-wrapper">
+    <Header />
+    <Sidebar />
+
+    <main>
+      <!-- Projects -->
+      <Section title="Projects" id="projects">
+        {projects.map((p) => (
+          <CVEntry label={p.year}>
+            <h3>{p.url ? <a href={p.url}>{p.title}</a> : p.title}</h3>
+            <p>{p.description}</p>
+          </CVEntry>
+        ))}
+      </Section>
+
+      <!-- Work Experience -->
+      <Section title="Work Experience" id="work">
+        {work.map((w) => (
+          <CVEntry label={w.years}>
+            <h3>{w.role}</h3>
+            <p>{w.company}</p>
+            <p>{w.description}</p>
+          </CVEntry>
+        ))}
+      </Section>
+
+      <!-- Papers -->
+      <Section title="Papers" id="papers">
+        {papers.map((p) => (
+          <CVEntry label={p.year}>
+            <h3>{p.url ? <a href={p.url}>{p.title}</a> : p.title}</h3>
+            <p>{p.venue}</p>
+          </CVEntry>
+        ))}
+      </Section>
+
+      <!-- Photography -->
+      <Photography />
+
+      <!-- Blog -->
+      <Section title="Blog" id="blog">
+        {blog.map((b) => (
+          <CVEntry label={b.year}>
+            <h3>{b.url ? <a href={b.url}>{b.title}</a> : b.title}</h3>
+            {b.excerpt && <p>{b.excerpt}</p>}
+          </CVEntry>
+        ))}
+      </Section>
+
+      <!-- Education -->
+      <Section title="Education" id="education">
+        {education.map((e) => (
+          <CVEntry label={e.years}>
+            <h3>{e.institution}</h3>
+            <p>{e.degree}</p>
+            {e.description && <p>{e.description}</p>}
+          </CVEntry>
+        ))}
+      </Section>
+
+      <!-- Other Stuff -->
+      <Section title="Other Stuff" id="other">
+        {other.map((o) => (
+          <CVEntry label={o.label}>
+            <h3>{o.url ? <a href={o.url}>{o.title}</a> : o.title}</h3>
+            <p>{o.description}</p>
+          </CVEntry>
+        ))}
+      </Section>
+
+      <!-- Colophon -->
+      <Section title="Colophon" id="colophon">
+        <CVEntry label="">
+          <p>Built with Astro. Hosted via Docker.</p>
+          <p>Inspired by <a href="https://robb.is/">robb.is</a>.</p>
+        </CVEntry>
+      </Section>
+    </main>
+
+    <Footer />
+  </div>
+</Layout>

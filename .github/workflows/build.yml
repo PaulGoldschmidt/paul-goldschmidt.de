@@ -50,11 +50,5 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-          build-args: |
-            NEXT_PUBLIC_TURNSTILE_SITE_KEY=${{ secrets.NEXT_PUBLIC_TURNSTILE_SITE_KEY }}
-            NEXT_PUBLIC_NEWSLETTER_API_USERNAME=${{ secrets.NEXT_PUBLIC_NEWSLETTER_API_USERNAME }}
-            NEXT_PUBLIC_NEWSLETTER_API_TOKEN=${{ secrets.NEXT_PUBLIC_NEWSLETTER_API_TOKEN }}
-            NEXT_PUBLIC_NEWSLETTER_API_ENDPOINT=${{ secrets.NEXT_PUBLIC_NEWSLETTER_API_ENDPOINT }}
-            NEXT_PUBLIC_NEWSLETTER_LIST_ID=${{ secrets.NEXT_PUBLIC_NEWSLETTER_LIST_ID }}
           cache-from: type=registry,ref=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:buildcache
           cache-to: type=registry,ref=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:buildcache,mode=max

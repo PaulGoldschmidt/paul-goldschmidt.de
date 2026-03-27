@@ -1,0 +1,51 @@
+---
+import photos from "../data/photography.json";
+---
+
+<section class="section">
+  <h2 id="photography">Photography</h2>
+  <div class="photo-grid">
+    {photos.map((photo) => (
+      <img
+        src={photo.src}
+        alt={photo.alt}
+        title={photo.title || ""}
+        loading="lazy"
+        data-lightbox
+      />
+    ))}
+  </div>
+</section>
+
+<!-- Lightbox overlay -->
+<div class="lightbox" id="lightbox" role="dialog" aria-label="Photo viewer">
+  <img src="" alt="" />
+</div>
+
+<script is:inline>
+  (function () {
+    const lightbox = document.getElementById("lightbox");
+    if (!lightbox) return;
+    const lightboxImg = lightbox.querySelector("img");
+
+    document.querySelectorAll("[data-lightbox]").forEach(function (img) {
+      img.addEventListener("click", function () {
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        lightbox.classList.add("active");
+      });
+    });
+
+    lightbox.addEventListener("click", function () {
+      lightbox.classList.remove("active");
+      lightboxImg.src = "";
+    });
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && lightbox.classList.contains("active")) {
+        lightbox.classList.remove("active");
+        lightboxImg.src = "";
+      }
+    });
+  })();
+</script>

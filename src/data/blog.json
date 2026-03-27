@@ -1,0 +1,14 @@
+[
+  {
+    "year": "2025",
+    "title": "Thoughts on Building Personal Websites",
+    "excerpt": "Why I decided to build my own site from scratch.",
+    "url": "/blog/personal-websites"
+  },
+  {
+    "year": "2024",
+    "title": "Lessons Learned from My First Year as an Engineer",
+    "excerpt": "Reflections on joining a team and shipping real software.",
+    "url": "/blog/first-year"
+  }
+]
