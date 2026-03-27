@@ -87,6 +87,15 @@ a[href^="mailto"]::after {
   color: var(--text-tertiary);
 }
 
+.cv-content p a {
+  color: inherit;
+}
+
+.cv-content p a[href^="http"]::after,
+.cv-content p a[href^="mailto"]::after {
+  content: none;
+}
+
 /* === Page Structure === */
 .page-wrapper {
   display: flex;
@@ -218,6 +227,10 @@ a[href^="mailto"]::after {
 .cv-label {
   color: var(--text-tertiary);
   font-size: 0.875rem;
+}
+
+.cv-sublabel {
+  display: block;
 }
 
 .cv-content h3 {

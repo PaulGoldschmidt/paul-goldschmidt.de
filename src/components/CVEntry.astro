@@ -1,12 +1,16 @@
 ---
 interface Props {
   label: string;
+  sublabel?: string;
 }
 
-const { label } = Astro.props;
+const { label, sublabel } = Astro.props;
 ---
 
-<div class="cv-label"><time>{label}</time></div>
+<div class="cv-label">
+  <time>{label}</time>
+  {sublabel && <span class="cv-sublabel">{sublabel}</span>}
+</div>
 <div class="cv-content">
   <slot />
 </div>

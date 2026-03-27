@@ -1,20 +1,30 @@
 [
+    {
+    "years": "2026–Now",
+    "role": "Machine Learning Intern",
+    "company": "Tesla Inc.",
+    "location": "Grünheide, Germany",
+    "description": "Working with large datasets inside of Tesla, also gaining insights into automotive & battery technologies."
+  },
   {
-    "years": "2024–Now",
+    "years": "2025–Now",
     "role": "Software Engineer",
-    "company": "Example Corp",
-    "description": "Working on distributed systems and infrastructure."
+    "company": "Stanford University",
+    "location": "Stanford, California",
+    "description": "Responsible for the refactoring of the <a href=\"https://myheartcounts.stanford.edu/team\">My Heart Counts</a> Study Backend (Typescript, Firebase) rewriting and maintaining 20+ functions of one of the largest cardiovascular health studies in the US, fully <a href=\"https://github.com/StanfordBDHG/MyHeartCounts-Firebase\">open-source.</a>"
   },
   {
-    "years": "2022–2024",
-    "role": "Junior Developer",
-    "company": "Startup Inc",
-    "description": "Full-stack development on a SaaS product."
+    "years": "2021–Now",
+    "role": "Founder / Managing Director",
+    "company": "Dotreflection GmbH",
+    "location": "Heidelberg, Germany",
+    "description": "Founding of the company and managing day-to-day operations with <a href=\"https://dotreflection.com/products\">three products</a> and multiple employees. Notable clients include the <a href=\"https://www.uni-heidelberg.de/\">University of Heidelberg</a> and <a href=\"https://www.dh-companion.com/\">DHC</a>."
   },
   {
-    "years": "2020–2022",
+    "years": "2023",
     "role": "Intern",
-    "company": "Tech GmbH",
-    "description": "Backend development and data engineering."
+    "company": "Siemens Healthineers AG",
+    "location": "Hanover, Germany",
+    "description": "Contributed to the development and deployment of C++ software, enhanced the data analytics pipeline for preventive maintenance across the organisation using <a href=\"https://spark.apache.org/\">Apache Spark</a>."
   }
 ]

@@ -9,7 +9,7 @@ import Footer from "../components/Footer.astro";
 
 import projects from "../data/projects.json";
 import work from "../data/work.json";
-import papers from "../data/papers.json";
+import publications from "../data/publications.json";
 import blog from "../data/blog.json";
 import education from "../data/education.json";
 import other from "../data/other.json";
@@ -26,7 +26,7 @@ import other from "../data/other.json";
         {projects.map((p) => (
           <CVEntry label={p.year}>
             <h3>{p.url ? <a href={p.url}>{p.title}</a> : p.title}</h3>
-            <p>{p.description}</p>
+            <p set:html={p.description} />
           </CVEntry>
         ))}
       </Section>
@@ -34,17 +34,16 @@ import other from "../data/other.json";
       <!-- Work Experience -->
       <Section title="Work Experience" id="work">
         {work.map((w) => (
-          <CVEntry label={w.years}>
-            <h3>{w.role}</h3>
-            <p>{w.company}</p>
-            <p>{w.description}</p>
+          <CVEntry label={w.years} sublabel={w.location}>
+            <h3>{w.role} — {w.company}</h3>
+            <p set:html={w.description} />
           </CVEntry>
         ))}
       </Section>
 
-      <!-- Papers -->
-      <Section title="Papers" id="papers">
-        {papers.map((p) => (
+      <!-- Publications -->
+      <Section title="Publications" id="publications">
+        {publications.map((p) => (
           <CVEntry label={p.year}>
             <h3>{p.url ? <a href={p.url}>{p.title}</a> : p.title}</h3>
             <p>{p.venue}</p>
@@ -81,7 +80,7 @@ import other from "../data/other.json";
         {other.map((o) => (
           <CVEntry label={o.label}>
             <h3>{o.url ? <a href={o.url}>{o.title}</a> : o.title}</h3>
-            <p>{o.description}</p>
+            <p set:html={o.description} />
           </CVEntry>
         ))}
       </Section>
