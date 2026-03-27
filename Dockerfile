@@ -4,8 +4,6 @@ WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm ci
 COPY . .
-ARG PUBLIC_TURNSTILE_SITE_KEY="0x4AAAAAACwt1vuKSUL6m1ZS"
-ENV PUBLIC_TURNSTILE_SITE_KEY=$PUBLIC_TURNSTILE_SITE_KEY
 RUN npm run build
 
 # Stage 2: Serve

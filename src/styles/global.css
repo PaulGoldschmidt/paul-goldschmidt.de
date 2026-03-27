@@ -70,6 +70,14 @@ a:hover {
   text-decoration-color: var(--accent);
 }
 
+a[href^="http"]::after,
+a[href^="mailto"]::after {
+  content: "↗";
+  padding-left: 0.15ch;
+  font-size: 0.85em;
+  color: var(--text-tertiary);
+}
+
 /* === Page Structure === */
 .page-wrapper {
   display: flex;
@@ -104,8 +112,21 @@ a:hover {
     font-size: 0.875rem;
   }
 
+  .sidebar nav a[href^="http"],
+  .sidebar nav a[href^="mailto"] {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    text-decoration-thickness: 1px;
+  }
+
   .sidebar nav a:hover {
     color: var(--text-primary);
+  }
+
+  .sidebar .sidebar-social {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--text-tertiary);
   }
 }
 
@@ -121,6 +142,13 @@ a:hover {
   color: var(--text-secondary);
   text-decoration: none;
   font-size: 0.875rem;
+}
+
+.inline-nav a[href^="http"],
+.inline-nav a[href^="mailto"] {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
 }
 
 .inline-nav a:hover {
@@ -232,18 +260,18 @@ a:hover {
 /* === Theme Toggle === */
 .theme-toggle {
   background: none;
-  border: 1px solid var(--text-tertiary);
-  color: var(--text-secondary);
+  border: none;
+  color: inherit;
   cursor: pointer;
-  padding: 0.25rem 0.5rem;
-  font-size: 0.75rem;
-  font-family: inherit;
-  border-radius: 4px;
+  padding: 0;
+  font: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
 }
 
 .theme-toggle:hover {
-  color: var(--text-primary);
-  border-color: var(--text-primary);
+  text-decoration-color: var(--accent);
 }
 
 /* === Footer === */

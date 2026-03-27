@@ -1,4 +1,27 @@
 <footer class="site-footer">
-  <p>You reached the end of the page.</p>
+  <p>You reached the end of the <button class="theme-toggle" aria-label="Toggle light/dark mode"><span class="theme-word">dark</span></button> page.</p>
   <p>It is now safe to turn off your computer.</p>
 </footer>
+
+<script is:inline>
+  (function () {
+    var btn = document.querySelector(".theme-toggle");
+    var word = btn.querySelector(".theme-word");
+    if (!btn || !word) return;
+
+    function update() {
+      var current = document.documentElement.getAttribute("data-theme");
+      word.textContent = current === "light" ? "light" : "dark";
+    }
+
+    update();
+
+    btn.addEventListener("click", function () {
+      var current = document.documentElement.getAttribute("data-theme");
+      var next = current === "light" ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", next);
+      localStorage.setItem("theme", next);
+      update();
+    });
+  })();
+</script>
