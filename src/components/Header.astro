@@ -22,14 +22,17 @@ const navItems = [
     </div>
   </div>
   <nav class="inline-nav">
+    <span class="inline-nav-label">here</span>
     {navItems.map((item) => (
       <a href={item.href}>{item.label}</a>
     ))}
     <span class="inline-nav-separator" aria-hidden="true"></span>
+    <span class="inline-nav-label">elsewhere</span>
     <a href="mailto:kontakt@paul-goldschmidt.de">Email</a>
     <a href="https://www.instagram.com/_paulgoldschmidt/">Instagram</a>
     <a href="https://www.linkedin.com/in/paul-goldschmidt/">LinkedIn</a>
     <a href="https://twitter.com/pauIgoldschmidt">X</a>
+    <span class="inline-nav-label">or</span>
     <a href="mailto:presse@paul-goldschmidt.de">Press Contact</a>
   </nav>
 </header>
@@ -46,5 +49,10 @@ const navItems = [
   .inline-nav-separator {
     width: 100%;
     height: 0;
+  }
+  .inline-nav-label {
+    color: var(--text-tertiary);
+    font-size: 0.875rem;
+    font-style: italic;
   }
 </style>
