@@ -1,9 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Sidebar from "../components/Sidebar.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <Layout title="Privacy Policy – Paul Goldschmidt">
   <div class="page-wrapper">
+    <Sidebar />
     <main class="legal">
       <a href="/">&larr; Back</a>
 
@@ -45,12 +48,13 @@ import Layout from "../layouts/Layout.astro";
       <p>The responsible party for data processing on this website is:</p>
       <p>
         Paul Goldschmidt<br />
-        DAI Heidelberg<br />
-        c/o Paul Goldschmidt, Begeisterhaus<br />
-        69115 Heidelberg
+        Apt. 208<br />
+        736 Escondido Rd.<br />
+        94305 Stanford<br />
+        United States of America
       </p>
       <p>
-        Phone: +49 6221 60730<br />
+        Phone: +1 (650) 334-6604<br />
         Email: kontakt@paul-goldschmidt.de
       </p>
       <p>The responsible party is the natural or legal person who alone or jointly with others determines the purposes and means of the processing of personal data (e.g., names, email addresses, etc.).</p>
@@ -173,6 +177,7 @@ import Layout from "../layouts/Layout.astro";
       <p>We collect, process, and use personal data only insofar as they are necessary for the establishment, content, or modification of the legal relationship (inventory data). This is done on the basis of Art. 6(1)(b) GDPR, which permits the processing of data for the fulfillment of a contract or pre-contractual measures. We collect, process, and use personal data about the use of this website (usage data) only insofar as this is necessary to enable the user to use the service or to bill the user.</p>
       <p>The collected customer data will be deleted after completion of the order or termination of the business relationship. Statutory retention periods remain unaffected.</p>
     </main>
+    <Footer />
   </div>
 </Layout>
 

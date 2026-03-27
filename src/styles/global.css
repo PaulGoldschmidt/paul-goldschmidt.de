@@ -228,6 +228,16 @@ a[href^="mailto"]::after {
   color: var(--text-secondary);
 }
 
+.cv-content ul {
+  list-style: disc;
+  padding-left: 1.25rem;
+  color: var(--text-secondary);
+}
+
+.cv-content li {
+  padding-bottom: 0.15rem;
+}
+
 /* === Photography Grid === */
 .photo-grid {
   display: grid;

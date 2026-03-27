@@ -1,9 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Sidebar from "../components/Sidebar.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <Layout title="Imprint – Paul Goldschmidt">
   <div class="page-wrapper">
+    <Sidebar />
     <main class="imprint">
       <a href="/">&larr; Back</a>
 
@@ -20,8 +23,7 @@ import Layout from "../layouts/Layout.astro";
 
       <h2>Contact</h2>
       <p>
-        Phone: +49 6221 60730<br />
-        Fax: +49 6221 607373<br />
+        Phone: +1 (650) 334-6604<br />
         Email: kontakt@paul-goldschmidt.de
       </p>
 
@@ -70,6 +72,7 @@ import Layout from "../layouts/Layout.astro";
         Insofar as the content on this site was not created by the operator, the copyrights of third parties are respected. In particular, third-party content is identified as such. Should you nevertheless become aware of a copyright infringement, please notify us accordingly. Upon becoming aware of legal violations, we will remove such content immediately.
       </p>
     </main>
+    <Footer />
   </div>
 </Layout>
 
