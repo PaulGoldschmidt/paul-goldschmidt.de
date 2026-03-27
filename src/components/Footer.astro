@@ -1,6 +1,6 @@
 <footer class="site-footer">
-  <p>You reached the end of the <button class="theme-toggle" aria-label="Toggle light/dark mode"><span class="theme-word">dark</span></button> page.</p>
-  <p>It is now safe to turn off your computer.</p>
+  <p id="footer-line">You reached the end of the <button class="theme-toggle" aria-label="Toggle light/dark mode"><span class="theme-word">dark</span></button> page.</p>
+  <p id="footer-sub">It is now safe to turn off your computer.</p>
 </footer>
 
 <script is:inline>
@@ -11,17 +11,36 @@
 
     function update() {
       var current = document.documentElement.getAttribute("data-theme");
-      word.textContent = current === "light" ? "light" : "dark";
+      var theme = current === "light" ? "light" : "dark";
+      word.textContent = theme;
+
+      var line = document.getElementById("footer-line");
+      var sub = document.getElementById("footer-sub");
+      if (aprilFools && line && sub) {
+        line.innerHTML = 'You reached the end of the <button class="theme-toggle" aria-label="Toggle light/dark mode"><span class="theme-word">' + theme + '</span></button> page on April Fools\' Day. Congratulations!';
+        sub.textContent = "It is now safe to turn off your computer.";
+        // Re-bind the new button
+        btn = line.querySelector(".theme-toggle");
+        word = btn.querySelector(".theme-word");
+        btn.addEventListener("click", toggle);
+      }
     }
 
-    update();
-
-    btn.addEventListener("click", function () {
+    function toggle() {
       var current = document.documentElement.getAttribute("data-theme");
       var next = current === "light" ? "dark" : "light";
       document.documentElement.setAttribute("data-theme", next);
       localStorage.setItem("theme", next);
+      if (window.__applyBgColor) window.__applyBgColor();
       update();
-    });
+    }
+
+    // hehe
+    var now = new Date();
+    var aprilFools = now.getMonth() === 3 && now.getDate() === 1;
+
+    update();
+
+    btn.addEventListener("click", toggle);
   })();
 </script>
