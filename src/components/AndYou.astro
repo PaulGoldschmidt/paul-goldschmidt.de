@@ -22,27 +22,27 @@ import CVEntry from "./CVEntry.astro";
 <script>
   import { WebHaptics } from "web-haptics";
 
-  const greetings: [number, number, string][] = [
-    [5,  7,  "Early bird? The sun is just waking up."],
-    [7,  9,  "Good morning! Coffee's brewing."],
-    [9,  12, "Good morning! Hope your day's off to a great start."],
-    [12, 13, "Lunch break? Nice."],
-    [13, 15, "Good afternoon! The day is in full swing."],
-    [15, 19, "Good evening! The sky is painting itself."],
-    [19, 21, "The blue hour. Everything looks better now."],
-    [21, 23, "Night owl? You're in good company."],
-    [23, 25, "Midnight thoughts. The best kind."],
-    [1,  3,  "Still up? The world is quiet now."],
-    [3,  5,  "The darkest hour. But dawn is coming."],
+  const greetings: [number, number, string[]][] = [
+    [5,  7,  ["Early bird? Hoping you catch the worm.", "You're up before the coffee machine, huh?", "The world is still stretching. So are you."]],
+    [7,  9,  ["Good morning! Coffee's brewing.", "Rise and shine \u2014 or at least rise.", "Morning!"]],
+    [9,  12, ["Good morning! Hope your day's off to a great start.", "Mid-morning. The productive hours, they say.", "Hello! In the flow yet?"]],
+    [12, 13, ["Lunch break? Nice.", "Noon already. Time flies.", "Midday pause \u2014 good time to browse."]],
+    [13, 15, ["Good afternoon! The day is in full swing.", "Afternoon. That post-lunch energy hitting?", "Welcome to pt. 2 of today."]],
+    [15, 19, ["Good evening! The sky is painting itself.", "The golden hour is approaching, better get out that camera.", "Winding down or just getting started?"]],
+    [19, 21, ["The blue hour. Everything looks better now.", "Evening. The screen glows a little warmer (truetone not included).", "The day is settling. Nice to see you."]],
+    [21, 23, ["Night owl? You're in good company.", "Late evening. The internet gets quieter now.", "Still going? Respect."]],
+    [23, 25, ["Midnight thoughts, the best kind, I hope.", "The day just flipped. Fresh start energy for ya?", "Past midnight. Nothing good or everything good happens now, I guess."]],
+    [1,  3,  ["Still up? The world is quiet now.", "The deep hours. Just you and the screen.", "Everyone else is asleep. Not you though."]],
+    [3,  5,  ["The darkest hour. But dawn is coming.", "Almost sunrise. You made it this far.", "The birds will start soon. You beat them."]],
   ];
 
   function getGreeting(): string {
     const h = new Date().getHours();
-    for (const [start, end, text] of greetings) {
+    for (const [start, end, texts] of greetings) {
       if (end > 24 ? (h >= start || h < end - 24) : (h >= start && h < end))
-        return text;
+        return texts[Math.floor(Math.random() * texts.length)];
     }
-    return greetings[0][2];
+    return greetings[0][2][0];
   }
 
   function getVisitorInfo(): string {
