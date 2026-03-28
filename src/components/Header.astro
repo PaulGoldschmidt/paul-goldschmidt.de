@@ -13,13 +13,13 @@ const navItems = [
 
 <header class="site-header">
   <div class="header-top">
-    <div class="vcard">
+    <a href="/contact/paulgoldschmidt.vcf" download class="vcard" id="vcard-link">
       <img class="avatar" src="/img/paulgoldschmidt.jpg" alt="Paul Goldschmidt" width="44" height="44" />
       <div>
         <h1>Paul Goldschmidt</h1>
         <span class="subtitle">Programmer & student, human being</span>
       </div>
-    </div>
+    </a>
   </div>
   <nav class="inline-nav">
     <span class="inline-nav-label">Here</span>
@@ -38,6 +38,19 @@ const navItems = [
   </nav>
 </header>
 
+<script is:inline>
+  // Only allow vCard download on touch devices
+  (function () {
+    var link = document.getElementById("vcard-link");
+    if (!link) return;
+    if (!("ontouchstart" in window)) {
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+      });
+    }
+  })();
+</script>
+
 <script>
   import { WebHaptics } from "web-haptics";
   const haptics = new WebHaptics();
@@ -51,6 +64,15 @@ const navItems = [
     width: 100%;
     height: 0;
   }
+  a.vcard {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  a.vcard::after {
+    content: none;
+  }
+
   .inline-nav-label {
     color: var(--text-tertiary);
     font-size: 0.875rem;
