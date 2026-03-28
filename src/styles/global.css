@@ -300,6 +300,26 @@ a[href^="mailto"]::after {
   font-weight: 600;
 }
 
+.cv-content h4 {
+  font-weight: 600;
+  padding-top: 0.75rem;
+  padding-bottom: 0.25rem;
+}
+
+.a11y-statement summary {
+  cursor: pointer;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.a11y-statement summary:hover {
+  text-decoration-color: var(--accent);
+}
+
+.a11y-statement[open] summary {
+  padding-bottom: 0.5rem;
+}
+
 .cv-content p {
   color: var(--text-secondary);
 }
