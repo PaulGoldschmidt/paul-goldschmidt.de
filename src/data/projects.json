@@ -4,20 +4,55 @@
     "title": "YourStats: iOS App for Personal Health Analytics",
     "description": "YourStats transforms your health and fitness data into meaningful insights that motivate and inspire. Whether you're a dedicated athlete chasing personal records or simply looking to understand your sleep patterns better, YourStats gives you the complete picture of your wellness journey. Questions like \"How many hours of deep sleep did I have in the last year?\" or \"What was my fastest-ever recorded workout speed?\" can be answered with YourStats in an instant.",
     "url": "https://apps.apple.com/de/app/yourstats-health-analytics/id6756127688",
-    "image": "/img/projects/cardiolytics.png"
+    "image": "/img/projects/cardiolytics.jpg"
   },
   {
     "year": "2025",
-    "title": "Project Beta",
-    "description": "Another project with a brief explanation of its purpose and impact.",
-    "url": null,
+    "title": "Advent of Code 2025, solved in C",
+    "description": "Solved all puzzles more or less optimized in C, see <span data-tooltip=\"a notorious hard day of the AOC25 challenge, requiring brute-force or an SMT solver-approach\">day 10/2</span> as an example of the approach taken.",
+    "url": "https://github.com/PaulGoldschmidt/advent-of-code-2025",
+    "image": "/img/projects/aoc25.jpg"
+  },
+  {
+    "year": "2025",
+    "title": "Heidelberg Citizen Data Groundstation",
+    "description": "First-of-its-kind initiative to collect and analyze self-collected data directly into the city of Heidelberg's Citizen Data Platform.",
+    "url": "https://p3g3.de/2025/03/bme680-lorawan-und-kernel-paniken-wetterdaten-im-buergerportal-der-stadt-heidelberg/",
     "image": null
   },
   {
     "year": "2023",
-    "title": "Project Gamma",
-    "description": "An earlier project demonstrating a different area of work.",
-    "url": "https://example.com/project-gamma",
+    "title": "MyFrame: An Open-Source HomeKit Compatible Picture Frame",
+    "description": "I reverse-engineered the HomeKit protocol to create MyFrame, an open-source picture frame that seamlessly integrates with Apple's HomeKit ecosystem. MyFrame useses a static image with different white points to show different themes.",
+    "url": "https://github.com/PaulGoldschmidt/MyFrame",
+    "image": "/img/projects/myframe.jpg"
+  },
+  {
+    "year": "2021",
+    "title": "Chirpanalytica",
+    "description": "Finalist project at the <span data-tooltip=\"Bundeswettbewerb Künstliche Intelligenz\">German Federal AI Competition</span> that used a NLP approach to match unpolitical tweets to differnet political viewpoints.",
+    "url": "https://github.com/PaulGoldschmidt/chirpanalytica",
+    "image": null
+  },
+  {
+    "year": "2020",
+    "title": "OSAMD: Open-Source Air Monitoring Device",
+    "description": "During the peaks of the COVID-19 pandemic, I developed OSAMD, an open-source air monitoring device designed to measure indoor air quality and provide real-time feedback on ventilation effectiveness. The basic idea was to use a very cheap sensor and map low-quality sensor data to hihg-quality sensor data using large datasets. Build around 10.000 Times in 200+ workshops, maily in schools.",
+    "url": "https://github.com/PaulGoldschmidt/OSAMD",
+    "image": "/img/projects/osamd.jpg"
+  },
+  {
+    "year": "2019",
+    "title": "LixieClock",
+    "description": "Low Voltage Nixie Clock: A modern take on the classic nixie tube clock, designed to operate at a safe low voltage while maintaining the vintage aesthetic.",
+    "url": null,
+    "image": "/img/projects/lixieclock.jpg"
+  },
+  {
+    "year": "2017",
+    "title": "TweetGuesser: A Twitter Game",
+    "description": "Small project at Jugend Hackt Frankfurt 2017, where players have to guess the author of a tweet from a selection of four possible authors.",
+    "url": "https://github.com/Jugendhackt/tweetguess",
     "image": null
   }
 ]
