@@ -4,6 +4,8 @@ WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm ci
 COPY . .
+ARG MATOMO_SITE_ID
+ENV PUBLIC_MATOMO_SITE_ID=$MATOMO_SITE_ID
 RUN npm run build
 
 # Stage 2: Serve
