@@ -96,8 +96,7 @@ a[href^="mailto"]::after {
   color: inherit;
 }
 
-.cv-content p a[href^="http"]::after,
-.cv-content p a[href^="mailto"]::after {
+.section:has(#blog) a[href^="http"]::after {
   content: none;
 }
 
@@ -307,7 +306,7 @@ a[href^="mailto"]::after {
 .project-img {
   width: 100%;
   height: auto;
-  border-radius: 12px;
+  border-radius: 16px;
   margin-bottom: 0.5rem;
   cursor: pointer;
 }
@@ -327,7 +326,7 @@ a[href^="mailto"]::after {
   display: block;
   cursor: pointer;
   background-color: var(--bg-secondary);
-  border-radius: 8px;
+  border-radius: 20px;
 }
 
 .photo-grid img.photo-wide {

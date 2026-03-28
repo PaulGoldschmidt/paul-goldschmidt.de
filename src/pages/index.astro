@@ -54,22 +54,6 @@ import other from "../data/other.json";
         ))}
       </Section>
 
-      <!-- Photography -->
-      <Photography />
-
-      <!-- Blog -->
-      <Section title="Recent Blog Posts" id="blog">
-        {blog.map((b) => (
-          <CVEntry label={b.year}>
-            <h3>{b.url ? <a href={b.url}>{b.title}</a> : b.title}</h3>
-            {b.excerpt && <p>{b.excerpt}</p>}
-          </CVEntry>
-        ))}
-        <CVEntry label="">
-          <p><a href="https://p3g3.de/">Read more on my blog →</a></p>
-        </CVEntry>
-      </Section>
-
       <!-- Education -->
       <Section title="Education" id="education">
         {education.map((e) => (
@@ -83,6 +67,22 @@ import other from "../data/other.json";
             )}
           </CVEntry>
         ))}
+      </Section>
+
+      <!-- Photography -->
+      <Photography />
+
+      <!-- Blog -->
+      <Section title="Recent Blog Posts" id="blog">
+        {blog.map((b) => (
+          <CVEntry label={b.year}>
+            <h3>{b.url ? <a href={b.url}>{b.title}</a> : b.title}</h3>
+            {b.excerpt && <p>{b.excerpt}</p>}
+          </CVEntry>
+        ))}
+        <CVEntry label="">
+          <p><a href="/blog">Find all posts on my blog ↗</a></p>
+        </CVEntry>
       </Section>
 
       <!-- Other Stuff -->
@@ -100,7 +100,7 @@ import other from "../data/other.json";
         <CVEntry label="Stack">
           <p>Built with <a href="https://astro.build/">Astro</a>, styled with vanilla CSS, set in <a href="https://vercel.com/font">Geist Sans</a>.</p>
           <p>The background color of this page is currenly <span id="bg-hex"></span>.</p>
-          <p>Theme inspired by <a href="https://github.com/robb/robb.is">Robb Böhnke</a>, rewrriten using Astro.</p>
+          <p>Theme inspired by <a href="https://github.com/robb/robb.is">Robb Böhnke</a>, rewritten using Astro.</p>
         </CVEntry>
         <CVEntry label="Hardware">
           <ul>

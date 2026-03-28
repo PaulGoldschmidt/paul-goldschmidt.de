@@ -2,13 +2,19 @@
   {
     "year": "04.2026",
     "title": "Happy Relaunch, Website!",
-    "excerpt": "After years, I finally built a new website, this time starting with a blank slate .",
-    "url": "https://p3g3.de/happy-relaunch"
+    "excerpt": "After years, I finally built a new website, this time starting with a blank slate and a free weekend.",
+    "url": "https://p3g3.de/happy-relaunch/"
   },
   {
-    "year": "2024",
-    "title": "Lessons Learned from My First Year as an Engineer",
-    "excerpt": "Reflections on joining a team and shipping real software.",
-    "url": "/blog/first-year"
+    "year": "01.2026",
+    "title": "My Time at Stanford: Summer in the Bear State",
+    "excerpt": "Impressions from my summer at Stanford.",
+    "url": "https://p3g3.de/2026/01/meine-zeit-in-stanford-sommer-im-bear-state/"
+  },
+  {
+    "year": "12.2025",
+    "title": "Advent of Code 2025, solved in C",
+    "excerpt": "How I approached the Advent of Code 2025 problems in C.",
+    "url": "https://p3g3.de/2025/12/der-advent-of-code-2025-geloest-in-c/"
   }
 ]
