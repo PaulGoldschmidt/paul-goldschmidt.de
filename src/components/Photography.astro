@@ -13,6 +13,7 @@ import photos from "../data/photography.json";
         data-subtitle={photo.subtitle || ""}
         loading="lazy"
         data-lightbox
+        class:list={[{ "photo-wide": photo.wide }]}
       />
     ))}
   </div>

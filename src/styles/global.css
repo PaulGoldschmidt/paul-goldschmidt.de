@@ -335,6 +335,10 @@ a[href^="mailto"]::after {
   border-radius: 8px;
 }
 
+.photo-grid img.photo-wide {
+  grid-column: 1 / -1;
+}
+
 /* === Lightbox === */
 .lightbox {
   display: none;

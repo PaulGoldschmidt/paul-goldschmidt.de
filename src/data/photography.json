@@ -3,36 +3,42 @@
     "src": "/img/showcase1.jpg",
     "alt": "Showcase photo 1",
     "title": "",
-    "subtitle": ""
+    "subtitle": "",
+    "wide": true
   },
   {
     "src": "/img/showcase2.jpg",
     "alt": "Showcase photo 2",
     "title": "",
-    "subtitle": ""
+    "subtitle": "",
+    "wide": false
   },
   {
     "src": "/img/showcase3.jpg",
     "alt": "Showcase photo 3",
     "title": "",
-    "subtitle": ""
+    "subtitle": "",
+    "wide": false
   },
   {
     "src": "/img/showcase4.jpg",
     "alt": "Showcase photo 4",
     "title": "",
-    "subtitle": ""
+    "subtitle": "",
+    "wide": false
   },
   {
     "src": "/img/showcase5.jpg",
     "alt": "Showcase photo 5",
     "title": "",
-    "subtitle": ""
+    "subtitle": "",
+    "wide": false
   },
   {
     "src": "/img/showcase6.jpg",
     "alt": "Showcase photo 6",
     "title": "",
-    "subtitle": ""
+    "subtitle": "",
+    "wide": true
   }
 ]
