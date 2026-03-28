@@ -151,6 +151,29 @@ a[href^="mailto"]::after {
     padding-top: 1rem;
     border-top: 1px solid var(--text-tertiary);
   }
+
+  .sidebar-logo {
+    display: block;
+    margin-bottom: 1.5rem;
+    width: 70px;
+  }
+
+  .sidebar-logo img {
+    width: 100%;
+    height: auto;
+  }
+
+  .sidebar-logo-dark {
+    display: none;
+  }
+
+  [data-theme="light"] .sidebar-logo-dark {
+    display: block;
+  }
+
+  [data-theme="light"] .sidebar-logo-light {
+    display: none;
+  }
 }
 
 /* === Inline Nav (Mobile/Tablet) === */
@@ -272,6 +295,15 @@ a[href^="mailto"]::after {
 
 .cv-content li {
   padding-bottom: 0.15rem;
+}
+
+/* === Project Images === */
+.project-img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
 }
 
 /* === Photography Grid === */

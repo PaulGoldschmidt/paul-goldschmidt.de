@@ -12,6 +12,10 @@ const navItems = [
 ---
 
 <aside class="sidebar">
+  <a href="#" class="sidebar-logo">
+    <img class="sidebar-logo-dark" src="/img/logo/dark.svg" alt="Logo" />
+    <img class="sidebar-logo-light" src="/img/logo/light.svg" alt="Logo" />
+  </a>
   <nav>
     {navItems.map((item) => (
       <a href={item.href}>{item.label}</a>

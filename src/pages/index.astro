@@ -27,6 +27,7 @@ import other from "../data/other.json";
       <Section title="Projects" id="projects">
         {projects.map((p) => (
           <CVEntry label={p.year}>
+            {p.image && <img class="project-img" src={p.image} alt={p.title} loading="lazy" data-lightbox data-subtitle={p.title} />}
             <h3>{p.url ? <a href={p.url}>{p.title}</a> : p.title}</h3>
             <p set:html={p.description} />
           </CVEntry>

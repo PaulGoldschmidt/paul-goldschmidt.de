@@ -1,13 +1,13 @@
 [
   {
-    "year": "2025",
+    "year": "2026",
     "title": "YourStats: iOS App for Personal Health Analytics",
     "description": "YourStats transforms your health and fitness data into meaningful insights that motivate and inspire. Whether you're a dedicated athlete chasing personal records or simply looking to understand your sleep patterns better, YourStats gives you the complete picture of your wellness journey. Questions like \"How many hours of deep sleep did I have in the last year?\" or \"What was my fastest-ever recorded workout speed?\" can be answered with YourStats in an instant.",
     "url": "https://apps.apple.com/de/app/yourstats-health-analytics/id6756127688",
-    "image": null
+    "image": "/img/projects/cardiolytics.png"
   },
   {
-    "year": "2024",
+    "year": "2025",
     "title": "Project Beta",
     "description": "Another project with a brief explanation of its purpose and impact.",
     "url": null,
