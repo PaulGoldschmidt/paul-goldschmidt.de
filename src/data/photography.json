@@ -1,44 +1,58 @@
 [
   {
-    "src": "/img/showcase1.jpg",
-    "alt": "Showcase photo 1",
+    "src": "/img/photography/showcase1.jpg",
+    "alt": "Sky and a rocket launching",
     "title": "",
-    "subtitle": "",
+    "subtitle": "Launch of Starship Test Flight 3, Boca Chica, Texas, 2024",
+    "wide": false
+  },
+  {
+    "src": "/img/photography/showcase2.jpg",
+    "alt": "Abstract light painting from a long exposure",
+    "title": "",
+    "subtitle": "Roadtrip 2021",
+    "wide": false
+  },
+  {
+    "src": "/img/photography/showcase3.jpg",
+    "alt": "Northern Lights",
+    "title": "",
+    "subtitle": "Northern Lights in Norway, 2025",
     "wide": true
   },
   {
-    "src": "/img/showcase2.jpg",
-    "alt": "Showcase photo 2",
+    "src": "/img/photography/showcase4.jpg",
+    "alt": "Three Zebras in a field",
     "title": "",
-    "subtitle": "",
+    "subtitle": "Zebras in South Africa, 2023",
     "wide": false
   },
   {
-    "src": "/img/showcase3.jpg",
-    "alt": "Showcase photo 3",
+    "src": "/img/photography/showcase5.jpg",
+    "alt": "Fighter Jet with Glowing Engine",
     "title": "",
-    "subtitle": "",
+    "subtitle": "F22 Raptor at ILA 2024, Berlin",
     "wide": false
   },
   {
-    "src": "/img/showcase4.jpg",
-    "alt": "Showcase photo 4",
+    "src": "/img/photography/showcase6.jpg",
+    "alt": "Sailor on a a sailboat",
     "title": "",
-    "subtitle": "",
+    "subtitle": "Sailing to Sweden, 2023",
     "wide": false
   },
   {
-    "src": "/img/showcase5.jpg",
-    "alt": "Showcase photo 5",
+    "src": "/img/photography/showcase7.jpg",
+    "alt": "Saltflat with a person kicking a football",
     "title": "",
-    "subtitle": "",
+    "subtitle": "Sunset in the Bonneville Salt Flats, Utah, 2025",
     "wide": false
   },
   {
-    "src": "/img/showcase6.jpg",
-    "alt": "Showcase photo 6",
+    "src": "/img/photography/showcase8.jpg",
+    "alt": "Singer with microphone on stage, black and white",
     "title": "",
-    "subtitle": "",
+    "subtitle": "Photographing on tour with the imagine dragons, 2024",
     "wide": true
   }
 ]
