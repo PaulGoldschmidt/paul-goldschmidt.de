@@ -12,9 +12,12 @@ const navItems = [
 ---
 
 <aside class="sidebar">
-  <a href="#" class="sidebar-logo">
-    <img class="sidebar-logo-dark" src="/img/logo/dark.svg" alt="Logo" />
-    <img class="sidebar-logo-light" src="/img/logo/light.svg" alt="Logo" />
+  <a href="#" class="sidebar-logo" aria-label="Logo">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 118.9 81.4" fill="none" stroke="currentColor" stroke-width="6" stroke-miterlimit="10">
+      <rect class="logo-r1" x="4.7" y="5.9" width="60.4" height="35.1" rx="8.5" ry="8.5"/>
+      <rect class="logo-r2" x="24.7" y="49.5" width="47.2" height="26.7" rx="8.5" ry="8.5"/>
+      <rect class="logo-r3" x="81.3" y="7.9" width="32.3" height="64.2" rx="8.5" ry="8.5"/>
+    </svg>
   </a>
   <nav>
     {navItems.map((item) => (

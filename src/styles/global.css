@@ -156,23 +156,34 @@ a[href^="mailto"]::after {
     display: block;
     margin-bottom: 1.5rem;
     width: 70px;
+    color: var(--text-primary);
   }
 
-  .sidebar-logo img {
+  .sidebar-logo svg {
     width: 100%;
     height: auto;
+    overflow: visible;
   }
 
-  .sidebar-logo-dark {
-    display: none;
+  .sidebar-logo rect {
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.4s ease;
   }
 
-  [data-theme="light"] .sidebar-logo-dark {
-    display: block;
-  }
+  @media (hover: hover) {
+    .sidebar-logo:hover .logo-r1 {
+      transform: translate(-20px, -15px);
+      opacity: 0;
+    }
 
-  [data-theme="light"] .sidebar-logo-light {
-    display: none;
+    .sidebar-logo:hover .logo-r2 {
+      transform: translate(0px, 20px);
+      opacity: 0;
+    }
+
+    .sidebar-logo:hover .logo-r3 {
+      transform: translate(20px, -10px);
+      opacity: 0;
+    }
   }
 }
 
