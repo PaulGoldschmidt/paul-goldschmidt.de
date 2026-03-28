@@ -5,6 +5,7 @@ import Sidebar from "../components/Sidebar.astro";
 import Section from "../components/Section.astro";
 import CVEntry from "../components/CVEntry.astro";
 import Photography from "../components/Photography.astro";
+import AndYou from "../components/AndYou.astro";
 import Footer from "../components/Footer.astro";
 
 import projects from "../data/projects.json";
@@ -109,8 +110,13 @@ import other from "../data/other.json";
       </Section>
       </div>
 
-      <!-- Colophon -->
+      <!-- And You? -->
       <div class="appear" style="--delay: 9">
+        <AndYou />
+      </div>
+
+      <!-- Colophon -->
+      <div class="appear" style="--delay: 10">
       <Section title="Colophon" id="colophon">
         <CVEntry label="Stack">
           <p>Built with <a href="https://astro.build/">Astro</a>, styled with vanilla CSS, set in <a href="https://vercel.com/font">Geist Sans</a>.</p>
