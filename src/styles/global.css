@@ -450,3 +450,32 @@ a[href^="mailto"]::after {
     padding-top: 0.5rem;
   }
 }
+
+/* === Page Load Animation === */
+@keyframes appear {
+  0%      { opacity: 0;     filter: blur(4px);    transform: translateY(10px); }
+  6.667%  { opacity: 0.618; filter: blur(1.528px); transform: translateY(4.932px); }
+  13.333% { opacity: 0.921; filter: blur(0.317px); transform: translateY(-0.524px); }
+  20%     { opacity: 0.986; filter: blur(0.055px); transform: translateY(-1.568px); }
+  26.667% { opacity: 0.998; filter: blur(0.009px); transform: translateY(-0.552px); }
+  33.333% { opacity: 1;     filter: blur(0.001px); transform: translateY(0.180px); }
+  40%     { opacity: 1;     filter: blur(0);       transform: translateY(0.229px); }
+  46.667% { opacity: 1;     filter: blur(0);       transform: translateY(0.053px); }
+  53.333% { opacity: 1;     filter: blur(0);       transform: translateY(-0.039px); }
+  60%     { opacity: 1;     filter: blur(0);       transform: translateY(-0.031px); }
+  66.667% { opacity: 1;     filter: blur(0);       transform: translateY(-0.003px); }
+  73.333% { opacity: 1;     filter: blur(0);       transform: translateY(0.007px); }
+  80%     { opacity: 1;     filter: blur(0);       transform: translateY(0.004px); }
+  86.667% { opacity: 1;     filter: blur(0);       transform: translateY(0); }
+  93.333% { opacity: 1;     filter: blur(0);       transform: translateY(-0.001px); }
+  100%    { opacity: 1;     filter: blur(0);       transform: translateY(0); }
+}
+
+@media not (prefers-reduced-motion: reduce) {
+  html.animate-appear .appear {
+    opacity: 0;
+    animation: appear 2.495s linear both;
+    animation-delay: calc(0.2s + var(--delay, 0) * 0.2s);
+    will-change: transform, opacity;
+  }
+}

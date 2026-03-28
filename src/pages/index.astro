@@ -17,13 +17,14 @@ import other from "../data/other.json";
 
 <Layout title="Paul Goldschmidt">
   <div class="page-wrapper">
-    <Header />
+    <div class="appear" style="--delay: 0"><Header /></div>
     <Sidebar />
 
     <main>
-      <p class="intro">Hi!<br>I'm Paul, a developer, mechanical engineering student, (concert-)photographer and founder trying to solve problems around me and have some fun while doing it. I tried to give a little sneak peak into my life on this website and sort what I do on a daily basis. You can find me often either around the Bay Area or in Hamburg, Germany. Feel free to reach out for collabs or any remaining questions.<br>~Paul <i>(Last updated: April, 2026)</i></p>
+      <p class="intro appear" style="--delay: 1">Hi!<br>I'm Paul, a developer, mechanical engineering student, (concert-)photographer and founder trying to solve problems around me and have some fun while doing it. I tried to give a little sneak peak into my life on this website and sort what I do on a daily basis. You can find me often either around the Bay Area or in Hamburg, Germany. Feel free to reach out for collabs or any remaining questions.<br>~Paul <i>(Last updated: April, 2026)</i></p>
 
       <!-- Projects -->
+      <div class="appear" style="--delay: 2">
       <Section title="Projects" id="projects">
         {projects.map((p) => (
           <CVEntry label={p.year}>
@@ -33,8 +34,10 @@ import other from "../data/other.json";
           </CVEntry>
         ))}
       </Section>
+      </div>
 
       <!-- Work Experience -->
+      <div class="appear" style="--delay: 3">
       <Section title="Work Experience" id="work">
         {work.map((w) => (
           <CVEntry label={w.years} sublabel={w.location}>
@@ -43,8 +46,10 @@ import other from "../data/other.json";
           </CVEntry>
         ))}
       </Section>
+      </div>
 
       <!-- Publications -->
+      <div class="appear" style="--delay: 4">
       <Section title="Publications" id="publications">
         {publications.map((p) => (
           <CVEntry label={p.year}>
@@ -53,8 +58,10 @@ import other from "../data/other.json";
           </CVEntry>
         ))}
       </Section>
+      </div>
 
       <!-- Education -->
+      <div class="appear" style="--delay: 5">
       <Section title="Education" id="education">
         {education.map((e) => (
           <CVEntry label={e.years}>
@@ -68,11 +75,15 @@ import other from "../data/other.json";
           </CVEntry>
         ))}
       </Section>
+      </div>
 
       <!-- Photography -->
+      <div class="appear" style="--delay: 6">
       <Photography />
+      </div>
 
       <!-- Blog -->
+      <div class="appear" style="--delay: 7">
       <Section title="Recent Blog Posts" id="blog">
         {blog.map((b) => (
           <CVEntry label={b.year}>
@@ -84,8 +95,10 @@ import other from "../data/other.json";
           <p><a href="/blog">Find all posts on my blog ↗</a></p>
         </CVEntry>
       </Section>
+      </div>
 
       <!-- Other Stuff -->
+      <div class="appear" style="--delay: 8">
       <Section title="Other Stuff" id="other">
         {other.map((o) => (
           <CVEntry label={o.label}>
@@ -94,8 +107,10 @@ import other from "../data/other.json";
           </CVEntry>
         ))}
       </Section>
+      </div>
 
       <!-- Colophon -->
+      <div class="appear" style="--delay: 9">
       <Section title="Colophon" id="colophon">
         <CVEntry label="Stack">
           <p>Built with <a href="https://astro.build/">Astro</a>, styled with vanilla CSS, set in <a href="https://vercel.com/font">Geist Sans</a>.</p>
@@ -129,6 +144,7 @@ import other from "../data/other.json";
           <p><a href="/contact/paulgoldschmidt.vcf" download>Download vCard</a></p>
         </CVEntry>
       </Section>
+      </div>
     </main>
     <Footer />
   </div>
