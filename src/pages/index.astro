@@ -89,7 +89,7 @@ import other from "../data/other.json";
       <Section title="Other Stuff" id="other">
         {other.map((o) => (
           <CVEntry label={o.label}>
-            <h3>{o.url ? <a href={o.url}>{o.title}</a> : o.title}</h3>
+            {o.url ? <h3><a href={o.url} set:html={o.title} /></h3> : <h3 set:html={o.title} />}
             <p set:html={o.description} />
           </CVEntry>
         ))}

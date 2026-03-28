@@ -1,14 +1,62 @@
 [
   {
-    "label": "2026",
-    "title": "Launch ",
-    "description": "Contributed to an open-source project focused on developer tools.",
-    "url": "https://github.com/example/project"
+    "label": "2025",
+    "title": "MCP x Quantum Science Hackathon at Stanford University",
+    "description": "Build a MCP server ecosystem for quantum circuit design using Qiskit Metal and electromagnetic simulation via Octave/OpenEMS.",
+    "url": "https://github.com/PaulGoldschmidt/qsim-mcp"
+  },
+  {
+    "label": "2025",
+    "title": "Global AI Hackathon, Massachusetts Institute of Technology",
+    "description": "Won with <a href=\"https://github.com/PaulGoldschmidt/SynthShape\">Synthshape</a>, allowing LLM-powered iterative 3D design and conversion of prompts into physical models.",
+    "url": "https://drive.google.com/file/d/1TClty6BIMVgT7Ze7hc_DhIYoOXOxWDRf/view"
   },
   {
     "label": "2023",
-    "title": "Volunteer Teaching",
-    "description": "Taught introductory programming workshops at a local community center.",
-    "url": null
+    "title": "<span data-tooltip=\"Deutscher Kinder- und Jugendpreis\">German Children's and Youth Award</span>",
+    "description": "Won for the adoption of the <a href=\"#projects\">Open Source Air Monitoring Device</a> building workshops the main prize at the Saxony-Anhalt Environmental Award.",
+    "url": "https://www.dkhw.de/informieren/unsere-angebote/fuer-kinder-und-jugendliche/deutscher-kinder-und-jugendpreis/die-gewinner-des-deutschen-kinder-und-jugendpreises-2023/"
+  },
+  {
+    "label": "2023",
+    "title": "<span data-tooltip=\"Umweltpreis Sachsen-Anhalt\">Saxony-Anhalt Environmental Award</span>",
+    "description": "Won for the adoption of the <a href=\"#projects\">Open Source Air Monitoring Device</a> building workshops the main prize at the Saxony-Anhalt Environmental Award.",
+    "url": "https://www.sueddeutsche.de/wissen/auszeichnung-umweltpreis-fuer-erfinder-eines-luftqualitaet-messgeraets-dpa.urn-newsml-dpa-com-20090101-230705-99-291273"
+  },
+  {
+    "label": "2022",
+    "title": "<span data-tooltip=\"Deutscher Engagementpreis\">German Civic Engagement Award</span>",
+    "description": "Won the highest award for civic engagement in Germany for the research, development and workshop adoption of the <a href=\"#projects\">Open Source Air Monitoring Device</a> in the section \"<span data-tooltip=\"Kategorie: Leben Bewahren\">Preserve Live</span>\".",
+    "url": "https://www.deutscher-engagementpreis.de/preisverleihung2022"
+  },
+  {
+    "label": "2021",
+    "title": "<span data-tooltip=\"Bundeswettbewerb Künstliche Intelligenz\">National Artificial Intelligence Competition</span>",
+    "description": "Finalist with the project <a href=\"#projects\">Chirpanalytica</a> in the federal AI competition 2021.",
+    "url": "https://www.bw-ki.de/rueckblick"
+  },
+  {
+    "label": "2021",
+    "title": "<span data-tooltip=\"BundesUmweltWettbewerb\">Federal Environmental Competition</span>",
+    "description": "Won the main prize for student's climate research and action for the research and development <a href=\"#projects\">Open Source Air Monitoring Device</a>.",
+    "url": "https://www.scienceolympiaden.de/media/2232/download/BUW_Pressemappe_2021.pdf"
+  },
+  {
+    "label": "2021",
+    "title": "HAWtechs Super Scientist Award",
+    "description": "Won the main prize for the mechatronical design of the <a href=\"#projects\">Open Source Air Monitoring Device</a>, which to my knowledge is still on-display in Dresden.",
+    "url": "https://www.htw-dresden.de/news/von-abstandsmessungen-in-menschenansammlungen-bis-zu-einem-zu-saetzlichen-augenpaar-das-sind-hawtechs-super-scientists"
+  },
+  {
+    "label": "2020",
+    "title": "Paul Award",
+    "description": "Won the 1st place of the <span data-tooltip=\"Name of the award pure coincidence\">Paul Award</span> for the circuit design, software implementation and deployment of wireless temperature probes.",
+    "url": "https://www.paul-award.de/sieger/"
+  },
+  {
+    "label": "2015",
+    "title": "JugendHackt Berlin",
+    "description": "Won the main prize in a team of 12-15 year olds by improving on traffic management in cities.",
+    "url": "https://jugendhackt.org/event-rueckblick/berlin-2015/"
   }
 ]
