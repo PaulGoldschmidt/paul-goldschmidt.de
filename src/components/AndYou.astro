@@ -5,15 +5,14 @@ import CVEntry from "./CVEntry.astro";
 
 <Section title="And You?" id="and-you">
   <CVEntry label="">
-    <p id="andyou-greeting"></p>
-    <p id="andyou-intro"></p>
+    <p><span id="andyou-greeting"></span> <span id="andyou-intro"></span></p>
     <div id="andyou-input-area">
       <input type="text" id="andyou-input" placeholder="Tell me something about yourself..." maxlength="100" />
       <button id="andyou-submit">Go</button>
     </div>
     <div id="andyou-result" style="display:none">
-      <p id="andyou-remembered"></p>
       <canvas id="andyou-constellation"></canvas>
+      <p id="andyou-remembered"></p>
       <button id="andyou-reset">Start over</button>
     </div>
   </CVEntry>
@@ -123,12 +122,12 @@ import CVEntry from "./CVEntry.astro";
   }
 
   function setFirstVisitIntro() {
-    introEl.textContent = `Enough about me \u2014 I know you're ${visitorInfo}. This page is all about me, but what about you?`;
+    introEl.textContent = `I feel like I already told enough about me \u2014 if you want to, tell the stars (you will see why) about yourself, because the only thing I know about you is that you're a ${visitorInfo}. So please, go wild:`;
   }
 
   if (stored) {
     greetingEl.textContent = getGreeting() + " Welcome back!";
-    introEl.textContent = `Enough about me \u2014 I know you're ${visitorInfo}. Last time you told me a bit about yourself:`;
+    introEl.textContent = `I feel like I already told enough about me \u2014 if you want to, tell the stars about yourself, because the only thing I know about you is that you're a ${visitorInfo}. Here's what you told me about yourself last time:`;
     showResult(stored);
   } else {
     greetingEl.textContent = getGreeting();
@@ -231,14 +230,9 @@ import CVEntry from "./CVEntry.astro";
     font-style: italic;
   }
 
-  #andyou-greeting {
-    color: var(--text-secondary);
-    margin-bottom: 0.25rem;
-  }
-
+  #andyou-greeting,
   #andyou-intro {
     color: var(--text-secondary);
-    margin-bottom: 0.5rem;
   }
 
   @media screen and (max-width: 799px) {
