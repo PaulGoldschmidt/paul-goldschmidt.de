@@ -21,6 +21,7 @@ const { version } = await import("../../package.json");
     <link rel="manifest" href="/favicon/site.webmanifest" />
     <script is:inline define:vars={{ version }}> //injected at build time
       console.log("paul-goldschmidt.de v" + version);
+      console.log("Oh, hi, there! Type '__party()' in the js console for some primetime fun");
     </script>
     <script is:inline>
       (function () {
@@ -112,6 +113,8 @@ const { version } = await import("../../package.json");
           requestAnimationFrame(frame);
         }
 
+        window.__party = function () { startParty(40); };                                                                                                                                                                                                                                                                                           
+        
         var now = new Date();
         if (now.getHours() === 0 && now.getMinutes() === 0 && now.getSeconds() < 15) {
           startParty(15 - now.getSeconds());
