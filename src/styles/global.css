@@ -438,6 +438,10 @@ a[href^="mailto"]::after {
     gap: 0.25rem;
   }
 
+  .section h2 {
+    padding-top: 0.75rem;
+  }
+
   .cv-label {
     padding-top: 1rem;
   }
