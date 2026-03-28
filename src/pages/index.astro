@@ -72,7 +72,11 @@ import other from "../data/other.json";
           <CVEntry label={e.years}>
             <h3>{e.institution}</h3>
             <p>{e.degree}</p>
-            {e.description && <p>{e.description}</p>}
+            {e.description && e.description.length > 0 && (
+              <ul>
+                {e.description.map((item: string) => <li set:html={item} />)}
+              </ul>
+            )}
           </CVEntry>
         ))}
       </Section>

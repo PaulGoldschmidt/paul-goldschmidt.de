@@ -69,6 +69,61 @@ const { title } = Astro.props;
         window.__applyBgColor = apply;
       })();
     </script>
+    <script is:inline>
+      // Midnight party mode -- 15s of vibrant color cycling at 00:00
+      (function () {
+        function msUntilMidnight() {
+          var now = new Date();
+          var midnight = new Date(now);
+          midnight.setHours(24, 0, 0, 0);
+          return midnight - now;
+        }
+
+        function startParty(duration) {
+          var start = performance.now();
+          var ms = duration * 1000;
+          document.documentElement.classList.add("party-mode");
+
+          function frame(ts) {
+            var elapsed = ts - start;
+            if (elapsed >= ms) {
+              document.documentElement.classList.remove("party-mode");
+              if (window.__applyBgColor) window.__applyBgColor();
+              setTimeout(function () { startParty(15); }, msUntilMidnight());
+              return;
+            }
+            var hue = (elapsed / 2000 * 360) % 360;
+            var theme = document.documentElement.getAttribute("data-theme") || "dark";
+            var l = theme === "light" ? "65%" : "25%";
+            document.documentElement.style.setProperty("--bg", "hsl(" + hue + ", 100%, " + l + ")");
+            requestAnimationFrame(frame);
+          }
+
+          requestAnimationFrame(frame);
+        }
+
+        var now = new Date();
+        if (now.getHours() === 0 && now.getMinutes() === 0 && now.getSeconds() < 15) {
+          startParty(15 - now.getSeconds());
+        } else {
+          setTimeout(function () { startParty(15); }, msUntilMidnight());
+        }
+      })();
+    </script>
+    <script is:inline>
+      // Tooltips: tap to show on touch devices
+      document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener("click", function (e) {
+          var target = e.target.closest("[data-tooltip]");
+          document.querySelectorAll("[data-tooltip].tooltip-visible").forEach(function (el) {
+            if (el !== target) el.classList.remove("tooltip-visible");
+          });
+          if (target) {
+            target.classList.toggle("tooltip-visible");
+          }
+        });
+      });
+    </script>
   </head>
   <body>
     <slot />

@@ -61,6 +61,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+html.party-mode body {
+  transition: background-color 0.15s linear;
+}
+
 /* === Typography === */
 h1, h2, h3, h4 {
   color: var(--text-primary);
@@ -349,6 +353,41 @@ a[href^="mailto"]::after {
   color: var(--text-tertiary);
   font-size: 0.875rem;
   text-align: center;
+}
+
+/* === Tooltips === */
+[data-tooltip] {
+  cursor: help;
+  border-bottom: 1px dotted var(--text-tertiary);
+  position: relative;
+}
+
+[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 4px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s;
+  z-index: 50;
+}
+
+@media (hover: hover) {
+  [data-tooltip]:hover::after {
+    opacity: 1;
+  }
+}
+
+[data-tooltip].tooltip-visible::after {
+  opacity: 1;
 }
 
 /* === Responsive: Mobile === */

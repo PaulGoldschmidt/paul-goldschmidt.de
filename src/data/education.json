@@ -1,14 +1,23 @@
 [
   {
-    "years": "2020–2024",
-    "institution": "Technical University",
-    "degree": "B.Sc. Computer Science",
-    "description": "Focus on distributed systems and software engineering."
+    "years": "2023–2026",
+    "institution": "Hamburg University of Applied Sciences",
+    "degree": "B.Sc. Mechanical Engineering and Production / Specialization in Digital Engineering",
+    "description": [
+      "<span data-tooltip=\"Studienstiftung des Deutschen Volkes\">German National Academic Foundation</span> Study Grant - Spokesperson and Ambassador",
+      "Member & Hackathon Winner - <span data-tooltip=\"Google Student Developer Club\">GSDC</span>",
+      "Active member - <span data-tooltip=\"Deutsche Physikalische Gesellschaft e.V.\">German Physical Society</span> and <span data-tooltip=\"Permafrost Young Researchers Network\">PYRN</span>",
+      "Mentor - experimental physics"
+    ]
   },
   {
-    "years": "2018–2020",
-    "institution": "Gymnasium Example",
+    "years": "2016–2022",
+    "institution": "Carl-Bosch-Schule Heidelberg",
     "degree": "Abitur",
-    "description": null
+    "description": [
+      "Top 5% overall",
+      "Graduated with distinction <span data-tooltip=\"mit Auszeichnung\">(cum laude)</span>",
+      "Award for best performance of the year in Physics, History and Social Studies"
+    ]
   }
 ]
