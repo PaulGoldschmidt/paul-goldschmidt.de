@@ -58,13 +58,16 @@ import other from "../data/other.json";
       <Photography />
 
       <!-- Blog -->
-      <Section title="Blog" id="blog">
+      <Section title="Recent Blog Posts" id="blog">
         {blog.map((b) => (
           <CVEntry label={b.year}>
             <h3>{b.url ? <a href={b.url}>{b.title}</a> : b.title}</h3>
             {b.excerpt && <p>{b.excerpt}</p>}
           </CVEntry>
         ))}
+        <CVEntry label="">
+          <p><a href="https://p3g3.de/">Read more on my blog →</a></p>
+        </CVEntry>
       </Section>
 
       <!-- Education -->

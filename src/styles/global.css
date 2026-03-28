@@ -131,15 +131,10 @@ a[href^="mailto"]::after {
 
   .sidebar nav a {
     color: var(--text-secondary);
-    text-decoration: none;
-    font-size: 0.875rem;
-  }
-
-  .sidebar nav a[href^="http"],
-  .sidebar nav a[href^="mailto"] {
     text-decoration: underline;
     text-underline-offset: 2px;
     text-decoration-thickness: 1px;
+    font-size: 0.875rem;
   }
 
   .sidebar nav a:hover {
