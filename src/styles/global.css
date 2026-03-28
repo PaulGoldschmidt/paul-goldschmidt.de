@@ -73,6 +73,18 @@ h1, h2, h3, h4 {
   line-height: inherit;
 }
 
+@keyframes highlight {
+  0%   {  }
+  40%  { filter: blur(0.5px) brightness(2); text-shadow: var(--accent) 0 0 2px, var(--accent) 0 0 10px; }
+  60%  { filter: blur(0.5px) brightness(2); text-shadow: var(--accent) 0 0 2px, var(--accent) 0 0 10px; }
+  100% {  }
+}
+
+h1:target, h2:target, h3:target {
+  animation: highlight 1s linear both;
+  animation-delay: 0.6s;
+}
+
 a {
   color: var(--text-primary);
   text-decoration: underline;
