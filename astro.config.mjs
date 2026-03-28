@@ -5,6 +5,7 @@ export default defineConfig({
   redirects: {
     "/impressum": "/imprint",
     "/datenschutz": "/privacy",
+    "/calendar": "/kalender",
     "/instagram": "https://www.instagram.com/_paulgoldschmidt/",
     "/twitter": "https://twitter.com/PauIGoldschmidt",
     "/blog": "https://p3g3.de/",

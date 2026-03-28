@@ -1,0 +1,111 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Sidebar from "../components/Sidebar.astro";
+import Footer from "../components/Footer.astro";
+import calendars from "../data/calendars.json";
+---
+
+<Layout title="Kalender – Paul Goldschmidt">
+  <div class="page-wrapper">
+    <Sidebar />
+    <main class="kalender">
+      <a href="/">&larr; Back</a>
+
+      <h1>Meine Kalender - Archiv und Downloads</h1>
+
+      <p class="kalender-intro">
+        12 Monate, 52 Wochen, 365 Tage: Jedes Jahr erstelle ich einen Kalender mit meinen Lieblingsfotos des Jahres, die ich mit meiner Drohne, DSLM oder sogar Smartphone geschossen habe. Diese Seite stellt ein Archiv der Jahre dar, mit Downloadlinks zu den PDFs der Kalender (mit Kalendarium eingebettet) und den ganzen Bildern. Bitte die Bilder nicht ohne vorher kurz zu fragen veröffentlichen oder sonst hochladen, das Verwenden als Desktophintergrund usw. ist aber selbstverständlich erlaubt :).
+      </p>
+      <p class="kalender-intro">
+        Die Ordner sind jeweils Passwortgeschützt, das Passwort setzt sich jeweils aus "Kalender" und dem Jahr des Kalenders zusammen, für 2021 also z.B. "Kalender2021".
+      </p>
+
+      {calendars.map((cal) => (
+        <article class="calendar-card">
+          <a href={cal.downloadUrl} class="calendar-card-image">
+            <img
+              src={cal.image}
+              alt={`Kalender ${cal.title}`}
+              loading="lazy"
+            />
+          </a>
+          <div class="calendar-card-content">
+            <h2><a href={cal.downloadUrl}>{cal.title}</a></h2>
+            <p>{cal.description}</p>
+            <p class="calendar-password">Passwort des Ordners: &ldquo;{cal.password}&rdquo;</p>
+          </div>
+        </article>
+      ))}
+    </main>
+    <Footer />
+  </div>
+</Layout>
+
+<style>
+  .kalender {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .kalender h1 {
+    font-weight: 600;
+    padding-bottom: 1.5rem;
+  }
+
+  .kalender-intro {
+    padding-bottom: 0.75rem;
+    color: var(--text-secondary);
+    line-height: var(--line-height);
+  }
+
+  .calendar-card {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+    border-top: 1px solid var(--bg-secondary);
+  }
+
+  .calendar-card:last-child {
+    border-bottom: 1px solid var(--bg-secondary);
+  }
+
+  .calendar-card-image img {
+    width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+    background-color: var(--bg-secondary);
+  }
+
+  .calendar-card-content h2 {
+    font-weight: 600;
+    font-size: 1.125rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .calendar-card-content h2 a {
+    color: var(--text-primary);
+    text-decoration: none;
+  }
+
+  .calendar-card-content h2 a:hover {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .calendar-card-content p {
+    padding-bottom: 0.5rem;
+    line-height: var(--line-height);
+  }
+
+  .calendar-password {
+    color: var(--text-tertiary);
+    font-size: 0.875rem;
+  }
+
+  @media screen and (max-width: 799px) {
+    .calendar-card {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
