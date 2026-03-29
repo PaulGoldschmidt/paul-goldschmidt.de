@@ -29,7 +29,7 @@ import other from "../data/other.json";
       <Section title="Work Experience" id="work">
         {work.map((w) => (
           <CVEntry label={w.years} sublabel={w.location}>
-            <h3>{w.role} — {w.company}</h3>
+            <h3>{w.role} — {w.companyUrl ? <a href={w.companyUrl}>{w.company}</a> : w.company}</h3>
             <p set:html={w.description} />
           </CVEntry>
         ))}
