@@ -1,0 +1,165 @@
+<div class="cmd-palette" id="cmd-palette" role="dialog" aria-label="Command palette">
+  <div class="cmd-palette-inner">
+    <input
+      type="text"
+      class="cmd-palette-input"
+      id="cmd-input"
+      placeholder="Type a command…"
+      autocomplete="off"
+      spellcheck="false"
+    />
+    <ul class="cmd-palette-results" id="cmd-results"></ul>
+    <div class="cmd-palette-hint">
+      <span><kbd>↑↓</kbd> navigate</span>
+      <span><kbd>↵</kbd> select</span>
+      <span><kbd>esc</kbd> close</span>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  (function () {
+    var actions = [
+      { id: "work", name: "Work Experience", section: "Navigate", perform: function () { window.location.hash = "work"; } },
+      { id: "projects", name: "Projects", section: "Navigate", perform: function () { window.location.hash = "projects"; } },
+      { id: "publications", name: "Publications", section: "Navigate", perform: function () { window.location.hash = "publications"; } },
+      { id: "photography", name: "Photography", section: "Navigate", perform: function () { window.location.hash = "photography"; } },
+      { id: "blog", name: "Blog", section: "Navigate", perform: function () { window.location.hash = "blog"; } },
+      { id: "education", name: "Education", section: "Navigate", perform: function () { window.location.hash = "education"; } },
+      { id: "other", name: "Other Stuff", section: "Navigate", perform: function () { window.location.hash = "other"; } },
+      { id: "colophon", name: "Colophon", section: "Navigate", perform: function () { window.location.hash = "colophon"; } },
+      { id: "imprint", name: "Imprint", section: "Pages", perform: function () { window.location.href = "/imprint"; } },
+      { id: "privacy", name: "Privacy Policy", section: "Pages", perform: function () { window.location.href = "/privacy-policy"; } },
+      { id: "blog-ext", name: "Read Blog", keywords: "p3g3 writing posts", section: "External", perform: function () { window.location.href = "/blog"; } },
+      { id: "github", name: "GitHub", section: "External", perform: function () { window.open("https://github.com/paulgoldschmidt", "_blank"); } },
+      { id: "linkedin", name: "LinkedIn", section: "External", perform: function () { window.open("https://www.linkedin.com/in/paul-goldschmidt/", "_blank"); } },
+      { id: "email", name: "Send Email", keywords: "contact mail", section: "External", perform: function () { window.location.href = "mailto:kontakt@paul-goldschmidt.de"; } },
+      { id: "theme", name: "Toggle Theme", keywords: "dark light mode", section: "Actions", perform: function () {
+        var current = document.documentElement.getAttribute("data-theme");
+        var next = current === "light" ? "dark" : "light";
+        document.documentElement.setAttribute("data-theme", next);
+        localStorage.setItem("theme", next);
+        if (window.__applyBgColor) window.__applyBgColor();
+      }},
+      { id: "top", name: "Back to Top", section: "Actions", perform: function () { window.scrollTo({ top: 0, behavior: "smooth" }); } },
+    ];
+
+    var palette = document.getElementById("cmd-palette");
+    var input = document.getElementById("cmd-input");
+    var resultsList = document.getElementById("cmd-results");
+    var activeIndex = 0;
+
+    function open() {
+      palette.classList.add("active");
+      input.value = "";
+      activeIndex = 0;
+      render("");
+      input.focus();
+    }
+
+    function close() {
+      palette.classList.remove("active");
+      input.blur();
+    }
+
+    function filter(query) {
+      var q = query.toLowerCase();
+      if (!q) return actions;
+      return actions.filter(function (a) {
+        return a.name.toLowerCase().indexOf(q) !== -1 ||
+          (a.keywords && a.keywords.toLowerCase().indexOf(q) !== -1) ||
+          a.id.toLowerCase().indexOf(q) !== -1;
+      });
+    }
+
+    function render(query) {
+      var filtered = filter(query);
+      resultsList.innerHTML = "";
+      var lastSection = "";
+
+      filtered.forEach(function (action, i) {
+        if (action.section !== lastSection) {
+          lastSection = action.section;
+          var header = document.createElement("li");
+          header.className = "cmd-section";
+          header.textContent = action.section;
+          resultsList.appendChild(header);
+        }
+        var li = document.createElement("li");
+        li.className = "cmd-item" + (i === activeIndex ? " cmd-active" : "");
+        li.textContent = action.name;
+        li.setAttribute("data-index", i);
+        li.addEventListener("mouseenter", function () {
+          activeIndex = i;
+          updateActive();
+        });
+        li.addEventListener("click", function () {
+          action.perform();
+          close();
+        });
+        resultsList.appendChild(li);
+      });
+
+      if (filtered.length === 0) {
+        var empty = document.createElement("li");
+        empty.className = "cmd-empty";
+        empty.textContent = "No results found.";
+        resultsList.appendChild(empty);
+      }
+    }
+
+    function updateActive() {
+      var items = resultsList.querySelectorAll(".cmd-item");
+      items.forEach(function (el, i) {
+        el.classList.toggle("cmd-active", parseInt(el.getAttribute("data-index")) === activeIndex);
+      });
+      var active = resultsList.querySelector(".cmd-active");
+      if (active) active.scrollIntoView({ block: "nearest" });
+    }
+
+    // Keyboard shortcut: cmd+k / ctrl+k
+    document.addEventListener("keydown", function (e) {
+      if ((e.metaKey || e.ctrlKey) && e.key === "k") {
+        e.preventDefault();
+        if (palette.classList.contains("active")) {
+          close();
+        } else {
+          open();
+        }
+      }
+
+      if (!palette.classList.contains("active")) return;
+
+      var filtered = filter(input.value);
+
+      if (e.key === "Escape") {
+        close();
+      } else if (e.key === "ArrowDown") {
+        e.preventDefault();
+        activeIndex = Math.min(activeIndex + 1, filtered.length - 1);
+        updateActive();
+      } else if (e.key === "ArrowUp") {
+        e.preventDefault();
+        activeIndex = Math.max(activeIndex - 1, 0);
+        updateActive();
+      } else if (e.key === "Enter") {
+        e.preventDefault();
+        if (filtered[activeIndex]) {
+          filtered[activeIndex].perform();
+          close();
+        }
+      }
+    });
+
+    // Close on backdrop click
+    palette.addEventListener("click", function (e) {
+      if (e.target === palette) close();
+    });
+
+    // Filter on input
+    input.addEventListener("input", function () {
+      activeIndex = 0;
+      render(input.value);
+    });
+  })();
+</script>

@@ -13,6 +13,7 @@ const {
   type = "website",
 } = Astro.props;
 
+import CommandPalette from "../components/CommandPalette.astro";
 const siteUrl = "https://paul-goldschmidt.de";
 const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
 const ogImageUrl = ogImage.startsWith("http") ? ogImage : new URL(ogImage, siteUrl).href;
@@ -194,6 +195,7 @@ const { version } = await import("../../package.json");
     )}
   </head>
   <body>
+    <CommandPalette />
     <slot />
   </body>
 </html>

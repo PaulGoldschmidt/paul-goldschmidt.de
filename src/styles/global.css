@@ -399,6 +399,97 @@ a[href^="mailto"]::after {
   opacity: 0.8;
 }
 
+/* === Command Palette === */
+.cmd-palette {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  padding-top: min(20vh, 120px);
+  align-items: flex-start;
+}
+
+.cmd-palette.active {
+  display: flex;
+}
+
+.cmd-palette-inner {
+  width: min(500px, 90vw);
+  background: var(--bg-secondary);
+  border: 1px solid var(--text-tertiary);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.cmd-palette-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--text-primary);
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--text-tertiary);
+  outline: none;
+}
+
+.cmd-palette-input::placeholder {
+  color: var(--text-tertiary);
+}
+
+.cmd-palette-results {
+  list-style: none;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.cmd-section {
+  padding: 0.5rem 1rem 0.25rem;
+  font-size: 0.7rem;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.cmd-item {
+  padding: 0.5rem 1rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-size: 0.875rem;
+}
+
+.cmd-item.cmd-active {
+  background: var(--bg);
+  color: var(--text-primary);
+}
+
+.cmd-empty {
+  padding: 1rem;
+  color: var(--text-tertiary);
+  text-align: center;
+  font-size: 0.875rem;
+}
+
+.cmd-palette-hint {
+  display: flex;
+  gap: 1rem;
+  padding: 0.5rem 1rem;
+  border-top: 1px solid var(--text-tertiary);
+  font-size: 0.7rem;
+  color: var(--text-tertiary);
+}
+
+.cmd-palette-hint kbd {
+  font-family: inherit;
+  font-size: 0.65rem;
+  padding: 0.1rem 0.3rem;
+  border: 1px solid var(--text-tertiary);
+  border-radius: 3px;
+  margin-right: 0.2rem;
+}
+
 /* === Theme Toggle === */
 .theme-toggle {
   background: none;
