@@ -54,5 +54,5 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           build-args: |
             MATOMO_SITE_ID=${{ secrets.MATOMO_SITE_ID }}
-          cache-from: type=registry,ref=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:buildcache
-          cache-to: type=registry,ref=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:buildcache,mode=max
+          cache-from: type=registry,ref=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:buildcache-${{ inputs.environment }}
+          cache-to: type=registry,ref=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:buildcache-${{ inputs.environment }},mode=max
