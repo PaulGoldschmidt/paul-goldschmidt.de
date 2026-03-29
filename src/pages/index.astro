@@ -24,26 +24,26 @@ import other from "../data/other.json";
     <main>
       <p class="intro appear" style="--delay: 1">Hi!<br>I'm Paul — developer, mechanical engineering student, photography enthusiast, and founder of a small startup focused on solving everyday problems (and having fun along the way). This site is a peek into my life and work. You can find me around the Bay Area or Hamburg, Germany. Feel free to reach out for collabs or just to say hi!<br>~Paul <i>(Last updated: April, 2026)</i></p>
 
-      <!-- Projects -->
+      <!-- Work Experience -->
       <div class="appear" style="--delay: 2">
+      <Section title="Work Experience" id="work">
+        {work.map((w) => (
+          <CVEntry label={w.years} sublabel={w.location}>
+            <h3>{w.role} — {w.company}</h3>
+            <p set:html={w.description} />
+          </CVEntry>
+        ))}
+      </Section>
+      </div>
+
+      <!-- Projects -->
+      <div class="appear" style="--delay: 3">
       <Section title="Projects" id="projects">
         {projects.map((p) => (
           <CVEntry label={p.year}>
             {p.image && <img class="project-img" src={p.image} alt={p.title} loading="lazy" data-lightbox data-subtitle={p.title} />}
             <h3>{p.url ? <a href={p.url}>{p.title}</a> : p.title}</h3>
             <p set:html={p.description} />
-          </CVEntry>
-        ))}
-      </Section>
-      </div>
-
-      <!-- Work Experience -->
-      <div class="appear" style="--delay: 3">
-      <Section title="Work Experience" id="work">
-        {work.map((w) => (
-          <CVEntry label={w.years} sublabel={w.location}>
-            <h3>{w.role} — {w.company}</h3>
-            <p set:html={w.description} />
           </CVEntry>
         ))}
       </Section>
