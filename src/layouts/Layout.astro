@@ -1,9 +1,22 @@
 ---
 interface Props {
   title: string;
+  description?: string;
+  ogImage?: string;
+  type?: "website" | "article";
 }
 
-const { title } = Astro.props;
+const {
+  title,
+  description = "Paul Goldschmidt — developer, mechanical engineering student, concert photographer and founder based in the Bay Area and Hamburg, Germany.",
+  ogImage = "/img/profile/paulgoldschmidt.jpg",
+  type = "website",
+} = Astro.props;
+
+const siteUrl = "https://paul-goldschmidt.de";
+const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
+const ogImageUrl = ogImage.startsWith("http") ? ogImage : new URL(ogImage, siteUrl).href;
+
 const matomoSiteId = import.meta.env.PUBLIC_MATOMO_SITE_ID;
 const { version } = await import("../../package.json");
 ---
@@ -14,6 +27,21 @@ const { version } = await import("../../package.json");
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+    <meta name="author" content="Paul Goldschmidt" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:site_name" content="Paul Goldschmidt" />
+    <meta property="og:locale" content="en_US" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
+    <meta name="twitter:site" content="@PauIGoldschmidt" />
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />

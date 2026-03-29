@@ -9,6 +9,7 @@
     "preview": "astro preview"
   },
   "dependencies": {
+    "@astrojs/sitemap": "^3.7.2",
     "astro": "^5.7.10",
     "geist": "^1.7.0",
     "web-haptics": "^0.0.6"

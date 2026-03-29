@@ -16,7 +16,7 @@ import education from "../data/education.json";
 import other from "../data/other.json";
 ---
 
-<Layout title="Paul Goldschmidt">
+<Layout title="Paul Goldschmidt" description="Paul Goldschmidt — developer, mechanical engineering student, concert photographer and founder. Projects, work experience, publications, and photography portfolio.">
   <div class="page-wrapper">
     <div class="appear" style="--delay: 0"><Header /></div>
     <Sidebar />
@@ -186,4 +186,47 @@ import other from "../data/other.json";
     </main>
     <Footer />
   </div>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Paul Goldschmidt",
+    "url": "https://paul-goldschmidt.de",
+    "image": "https://paul-goldschmidt.de/img/profile/paulgoldschmidt.jpg",
+    "jobTitle": "Developer & Mechanical Engineering Student",
+    "description": "Developer, mechanical engineering student, concert photographer and founder based in the Bay Area and Hamburg, Germany.",
+    "alumniOf": [
+      {
+        "@type": "EducationalOrganization",
+        "name": "Stanford University",
+        "url": "https://stanford.edu"
+      },
+      {
+        "@type": "EducationalOrganization",
+        "name": "Hamburg University of Applied Sciences"
+      }
+    ],
+    "worksFor": [
+      { "@type": "Organization", "name": "Tesla Inc." },
+      { "@type": "Organization", "name": "Stanford University" },
+      { "@type": "Organization", "name": "Dotreflection GmbH", "url": "https://dotreflection.com" }
+    ],
+    "knowsAbout": ["Machine Learning", "Software Engineering", "Mechanical Engineering", "Concert Photography", "Open Source"],
+    "sameAs": [
+      "https://github.com/paulgoldschmidt",
+      "https://www.linkedin.com/in/paul-goldschmidt/",
+      "https://www.instagram.com/_paulgoldschmidt/",
+      "https://twitter.com/pauIgoldschmidt"
+    ]
+  })} />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Paul Goldschmidt",
+    "url": "https://paul-goldschmidt.de",
+    "description": "Personal portfolio and CV of Paul Goldschmidt — developer, mechanical engineering student, concert photographer and founder.",
+    "author": {
+      "@type": "Person",
+      "name": "Paul Goldschmidt"
+    }
+  })} />
 </Layout>

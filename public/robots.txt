@@ -1,0 +1,27 @@
+User-agent: *
+Allow: /
+
+# AI Crawlers - dunno if this is the way to go, but here goes nothing hah
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+# Sitemap
+Sitemap: https://paul-goldschmidt.de/sitemap-index.xml

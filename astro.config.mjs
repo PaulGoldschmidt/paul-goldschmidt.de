@@ -1,7 +1,10 @@
 import { defineConfig } from "astro/config";
+import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
+  site: "https://paul-goldschmidt.de",
   output: "static",
+  integrations: [sitemap()],
   redirects: {
     "/impressum": "/imprint",
     "/datenschutz": "/privacy",
