@@ -203,7 +203,9 @@ a[href^="mailto"]::after {
 
 .inline-nav a {
   color: var(--text-secondary);
-  text-decoration: none;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
   font-size: 0.875rem;
 }
 
@@ -217,12 +219,6 @@ a[href^="mailto"]::after {
   content: none;
 }
 
-.inline-nav a[href^="http"],
-.inline-nav a[href^="mailto"] {
-  text-decoration: underline;
-  text-underline-offset: 2px;
-  text-decoration-thickness: 1px;
-}
 
 .inline-nav a:hover {
   color: var(--text-primary);
