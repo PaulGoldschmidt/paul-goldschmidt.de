@@ -18,7 +18,7 @@
       var sub = document.getElementById("footer-sub");
       if (aprilFools && line && sub) {
         line.innerHTML = 'You reached the end of the <button class="theme-toggle" aria-label="Toggle light/dark mode"><span class="theme-word">' + theme + '</span></button> page on April Fools\' Day. Congratulations!';
-        sub.textContent = "It is now safe to turn off your computer.";
+        sub.textContent = "It is now safe to turn off your " + device + ".";
         // Re-bind the new button
         btn = line.querySelector(".theme-toggle");
         word = btn.querySelector(".theme-word");
@@ -38,6 +38,9 @@
     // hehe
     var now = new Date();
     var aprilFools = now.getMonth() === 3 && now.getDate() === 1;
+    var device = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent) ? "mobile device" : "computer";
+    var sub = document.getElementById("footer-sub");
+    if (sub) sub.textContent = "It is now safe to turn off your " + device + ".";
 
     update();
 
