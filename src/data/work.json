@@ -3,6 +3,7 @@
     "years": "2026–Now",
     "role": "Machine Learning Intern",
     "company": "Tesla Inc.",
+    "companyUrl": "https://www.tesla.com/de_de/giga-berlin",
     "location": "Grünheide, Germany",
     "description": "Working with large datasets inside of Tesla, also gaining insights into automotive & battery technologies."
   },
@@ -26,6 +27,7 @@
     "years": "2023",
     "role": "Intern",
     "company": "Siemens Healthineers AG",
+    "companyUrl": "https://www.siemens-healthineers.com/de",
     "location": "Hanover, Germany",
     "description": "Contributed to the development and deployment of C++ software, enhanced the data analytics pipeline for preventive maintenance across the organisation using <a href=\"https://spark.apache.org/\">Apache Spark</a>."
   }
