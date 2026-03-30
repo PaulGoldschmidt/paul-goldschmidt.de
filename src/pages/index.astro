@@ -78,13 +78,28 @@ import other from "../data/other.json";
       </Section>
       </div>
 
-      <!-- Photography -->
+      <!-- Volunteering -->
       <div class="appear" style="--delay: 6">
+      <Section title="Volunteering" id="memberships">
+        <CVEntry label="">
+          <p><a href="https://www.dpg-physik.de"><span data-tooltip="Deutsche Physikalische Gesellschaft">German Physical Society (DPG)</span></a></p>
+          <p><a href="https://community-klima.de"><span data-tooltip="CommunityKlima e.V.">CommunityKlima</span></a></p>
+          <p><a href="https://www.permafrost.org/group/permafrost-young-researchers-network-pyrn/"><span data-tooltip="Permafrost Young Researchers Network">PYRN</span></a></p>
+          <p><a href="https://lsbr.de"><span data-tooltip="Landesschülerbeirat Baden-Württemberg">State Student Council BW</span></a> (Elected Member, 2020–2022)</p>
+          <p><a href="https://lsbr.de/foerderverein/"><span data-tooltip="Die Fördergemeinschaft des Landesschülerbeirates Baden-Württemberg e.V.">Friends of the State Student Council BW</span></a></p>
+          <p><a href="https://www.heidelberg.de/HD/Rathaus/Jugendgemeinderat.html"><span data-tooltip="Jugendgemeinderat Heidelberg">Youth City Council Heidelberg</span></a> (Elected Member, 2019–2023)</p>
+          <p><a href="https://www.alumni-studienstiftung.org"><span data-tooltip="Alumni der Studienstiftung e.V.">Alumni of the German Academic Scholarship Foundation</span></a></p>
+        </CVEntry>
+      </Section>
+      </div>
+
+      <!-- Photography -->
+      <div class="appear" style="--delay: 7">
       <Photography />
       </div>
 
       <!-- Blog -->
-      <div class="appear" style="--delay: 7">
+      <div class="appear" style="--delay: 8">
       <Section title="Recent Blog Posts" id="blog">
         {blog.map((b) => (
           <CVEntry label={b.year}>
@@ -99,7 +114,7 @@ import other from "../data/other.json";
       </div>
 
       <!-- Other Stuff -->
-      <div class="appear" style="--delay: 8">
+      <div class="appear" style="--delay: 9">
       <Section title="Other Stuff" id="other">
         {other.map((o) => (
           <CVEntry label={o.label}>
@@ -111,12 +126,12 @@ import other from "../data/other.json";
       </div>
 
       <!-- And You? -->
-      <div class="appear" style="--delay: 9">
+      <div class="appear" style="--delay: 10">
         <AndYou />
       </div>
 
       <!-- Colophon -->
-      <div class="appear" style="--delay: 10">
+      <div class="appear" style="--delay: 11">
       <Section title="Colophon" id="colophon">
         <CVEntry label="Stack">
           <p>Built with <a href="https://astro.build/">Astro</a>, styled with vanilla CSS, set in <a href="https://vercel.com/font">Geist Sans</a>.</p>
