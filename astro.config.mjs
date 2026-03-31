@@ -4,6 +4,9 @@ import sitemap from "@astrojs/sitemap";
 export default defineConfig({
   site: "https://paul-goldschmidt.de",
   output: "static",
+  build: {
+    inlineStylesheets: "always",
+  },
   integrations: [sitemap()],
   redirects: {
     "/impressum": "/imprint",
