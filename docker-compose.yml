@@ -1,6 +1,6 @@
 services:
   web:
-    image: ${DOCKER_IMAGE}:latest
+    image: ${DOCKER_IMAGE}
     restart: unless-stopped
     ports:
       - 127.0.0.1:2003:80

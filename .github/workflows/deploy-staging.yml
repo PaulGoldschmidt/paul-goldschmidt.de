@@ -53,10 +53,10 @@ jobs:
           ssh -T ${{ secrets.SERVER_HOST }} << ENDSSH
             cd ${{ env.DEPLOY_PATH }}
             cat > .env <<'EOF'
-          DOCKER_IMAGE=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          DOCKER_IMAGE=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:staging
           TURNSTILE_SITE_KEY=${{ env.TURNSTILE_SITE_KEY }}
           EOF
             docker compose down
-            docker pull ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
+            docker pull ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:staging
             docker compose up -d
           ENDSSH
