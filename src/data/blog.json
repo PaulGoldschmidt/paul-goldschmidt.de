@@ -1,20 +1,26 @@
 [
   {
-    "year": "04.2026",
-    "title": "Happy Relaunch, Website!",
-    "excerpt": "After years, I finally built a new website, this time starting with a blank slate and a free weekend.",
-    "url": "https://p3g3.de/happy-relaunch/"
-  },
-  {
     "year": "01.2026",
-    "title": "My Time at Stanford: Summer in the Bear State",
-    "excerpt": "Impressions from my summer at Stanford.",
-    "url": "https://p3g3.de/2026/01/meine-zeit-in-stanford-sommer-im-bear-state/"
+    "title": "My Time in Stanford: Summer in the Bear State",
+    "excerpt": "Now, shortly after Christmas with vanilla crescent cookies, mulled wine, and gingerbread—and definitely no snow, though slightly cooler temperatures—I’m finally getting around to writing about my warm time far away from Christmas markets and winter feelings at Stanford University in California.Some of you",
+    "url": "https://blog.paul-goldschmidt.de/my-time-in-stanford-summer-in-the-bear-state/"
   },
   {
     "year": "12.2025",
     "title": "Advent of Code 2025, solved in C",
-    "excerpt": "How I approached the Advent of Code 2025 problems in C.",
-    "url": "https://p3g3.de/2025/12/der-advent-of-code-2025-geloest-in-c/"
+    "excerpt": "This year I took part in Advent of Code and solved each of the 12 puzzles in C. A few brief insights into the tasks and my thoughts on AoC 2025.",
+    "url": "https://blog.paul-goldschmidt.de/advent-of-code-2025-solved-in-c/"
+  },
+  {
+    "year": "08.2025",
+    "title": "YourStats - my first app in the App Store!",
+    "excerpt": "After around 200 hours of writing software, my first app, YourStats, is now available in the Apple App Store. In this post, I’ll go into the background of the app and its features.",
+    "url": "https://blog.paul-goldschmidt.de/yourstats-my-first-app/"
+  },
+  {
+    "year": "07.2025",
+    "title": "A Small Sign of Life - July 2025",
+    "excerpt": "Yes, I'm still alive! A brief overview of what will still be coming to this blog and where I'm currently spending my time.",
+    "url": "https://blog.paul-goldschmidt.de/small-sign-of-life-july-2025/"
   }
 ]
