@@ -61,16 +61,17 @@ function formatDate(rfc2822) {
   return `${month}.${year}`;
 }
 
+function truncate(text) {
+  if (text.length <= EXCERPT_FALLBACK_LENGTH) return text;
+  return text.slice(0, EXCERPT_FALLBACK_LENGTH) + "...";
+}
+
 function buildExcerpt(description, contentEncoded) {
   const descText = description ? stripHtml(description) : "";
-  if (descText) return descText;
+  if (descText) return truncate(descText);
 
   const contentText = contentEncoded ? stripHtml(contentEncoded) : "";
-  if (contentText) {
-    return contentText.length > EXCERPT_FALLBACK_LENGTH
-      ? contentText.slice(0, EXCERPT_FALLBACK_LENGTH) + "..."
-      : contentText;
-  }
+  if (contentText) return truncate(contentText);
 
   return "";
 }
