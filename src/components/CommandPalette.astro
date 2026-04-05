@@ -1,3 +1,7 @@
+---
+import blogPosts from "../data/blog.json";
+---
+
 <div class="cmd-palette" id="cmd-palette" role="dialog" aria-label="Command palette">
   <div class="cmd-palette-inner">
     <input
@@ -17,7 +21,7 @@
   </div>
 </div>
 
-<script is:inline>
+<script is:inline define:vars={{ blogPosts }}>
   (function () {
     var actions = [
       { id: "work", name: "Work Experience", section: "Navigate", perform: function () { window.location.hash = "work"; } },
@@ -44,6 +48,16 @@
       }},
       { id: "top", name: "Back to Top", section: "Actions", perform: function () { window.scrollTo({ top: 0, behavior: "smooth" }); } },
     ];
+
+    blogPosts.forEach(function (post) {
+      actions.push({
+        id: "blog-" + post.title.toLowerCase().replace(/\s+/g, "-"),
+        name: post.title,
+        keywords: "blog post " + post.year,
+        section: "Blog Posts",
+        perform: function () { window.open(post.url, "_blank"); },
+      });
+    });
 
     var palette = document.getElementById("cmd-palette");
     var input = document.getElementById("cmd-input");
