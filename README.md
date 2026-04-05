@@ -8,7 +8,7 @@ The closely related repository [PaulGoldschmidt/p3g3.de](https://github.com/Paul
 
 ## Features
 
-I tried to make the website feel __as alive as possible__ while still keeping it fully client-sided, adding some cool-ish features:
+I tried to make the website feel *as alive as possible* while still keeping it fully client-sided, adding some cool-ish features:
 
 - [Web-Haptics](https://github.com/lochie/web-haptics) for haptic feedback on mobile for certain actions
 - Dynamic Background of the page, slowly changing over the day
