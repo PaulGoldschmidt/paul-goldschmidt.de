@@ -32,5 +32,5 @@ This project is licensed under the MIT License. See [Licenses](https://github.co
 ## Contributors
 See [CONTRIBUTORS.md](https://github.com/StanfordBDHG/SwiftPackageTemplate/tree/main/CONTRIBUTORS.md) for a full list of all contributors.
 
-![Paul Goldschmidt Logo](https://raw.githubusercontent.com/PaulGoldschmidt/paulgoldschmidt/main/logo/light.png#gh-light-mode-only)
-![Paul Goldschmidt Logo](https://raw.githubusercontent.com/PaulGoldschmidt/paulgoldschmidt/main/logo/dark.png#gh-dark-mode-only)
+![Paul Goldschmidt Logo](https://raw.githubusercontent.com/PaulGoldschmidt/paulgoldschmidt/main/logo/dark-smaller.png#gh-light-mode-only)
+![Paul Goldschmidt Logo](https://raw.githubusercontent.com/PaulGoldschmidt/paulgoldschmidt/main/logo/light-smaller.png#gh-dark-mode-only)
