@@ -1,6 +1,6 @@
 # My Personal Website
 
-Over the years, I had mutliple, often cringy websites which I was not fully happy with. After this started really bugging me, I decided to create a new website starting from scratch.
+Over the years, I had mutliple, often cringy websites which I was not fully happy with. After this started really bugging me, I decided to create a new website starting from scratch[^1]. You can find the deployed version of this repo at [paul-goldschmidt.de](https://paul-goldschmidt.de).
 
 The design of this Website is in large parts adopted from [Robb Böhnke](https://github.com/robb/robb.is), but reimplemented using [Astro](https://astro.build/), an amazing fast Javascript Framework for client-side webpages.
 
@@ -31,6 +31,8 @@ This project is licensed under the MIT License. See [Licenses](https://github.co
 
 ## Contributors
 See [CONTRIBUTORS.md](https://github.com/StanfordBDHG/SwiftPackageTemplate/tree/main/CONTRIBUTORS.md) for a full list of all contributors.
+
+[^1] That is until in a few years this design will be cringe again and I'll start the endevour to build paul-goldschmidt.de, version 4.0.
 
 ![Paul Goldschmidt Logo](https://raw.githubusercontent.com/PaulGoldschmidt/paulgoldschmidt/main/logo/dark-smaller.png#gh-light-mode-only)
 ![Paul Goldschmidt Logo](https://raw.githubusercontent.com/PaulGoldschmidt/paulgoldschmidt/main/logo/light-smaller.png#gh-dark-mode-only)
