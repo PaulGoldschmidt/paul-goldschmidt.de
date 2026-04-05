@@ -1,4 +1,4 @@
-# My Personal Website 🕸️
+# My Personal Website :spider_web:
 
 Over the years, I had mutliple, often cringy websites which I was not fully happy with. After this started really bugging me, I decided to create a new website starting from scratch[^1]. You can find the deployed version of this repo at [paul-goldschmidt.de](https://paul-goldschmidt.de).
 
@@ -20,7 +20,7 @@ I tried to make the website feel *as alive as possible* while still keeping it f
 
 The website maintains a perfect score 100 in all Google Lightspeed Tests.
 
-## Development Commands
+## Development Commands :octocat:
 
 - `npm run dev` — start dev server
 - `npm run build` — build static site to `dist/`
