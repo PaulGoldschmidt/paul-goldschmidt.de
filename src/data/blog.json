@@ -1,5 +1,11 @@
 [
   {
+    "year": "04.2026",
+    "title": "(Almost) everything revamped: My new website and new blog",
+    "excerpt": "Now for the third time, every few years, I realize that my personal web presences are no longer up to date – with my per...",
+    "url": "https://blog.paul-goldschmidt.de/fast-alles-auf-neu-meine-neue-webseite-und-neuer-blog/"
+  },
+  {
     "year": "01.2026",
     "title": "My Time in Stanford: Summer in the Bear State",
     "excerpt": "Now, shortly after Christmas with vanilla crescent cookies, mulled wine, and gingerbread—and definitely no snow, though ...",
@@ -16,11 +22,5 @@
     "title": "YourStats - my first app in the App Store!",
     "excerpt": "After around 200 hours of writing software, my first app, YourStats, is now available in the Apple App Store. In this po...",
     "url": "https://blog.paul-goldschmidt.de/yourstats-my-first-app/"
-  },
-  {
-    "year": "07.2025",
-    "title": "A Small Sign of Life - July 2025",
-    "excerpt": "Yes, I'm still alive! A brief overview of what will still be coming to this blog and where I'm currently spending my tim...",
-    "url": "https://blog.paul-goldschmidt.de/small-sign-of-life-july-2025/"
   }
 ]
