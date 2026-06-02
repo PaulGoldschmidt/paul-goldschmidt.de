@@ -27,10 +27,10 @@ The website maintains a perfect score 100 in all Google Lightspeed Tests.
 - `npm run preview` — preview production build locally
 
 ## License
-This project is licensed under the MIT License. See [Licenses](https://github.com/StanfordBDHG/SwiftPackageTemplate/tree/main/LICENSES) for more information.
+This project is licensed under the MIT License. See [Licenses](LICENSE.md) for more information.
 
 ## Contributors
-See [CONTRIBUTORS.md](https://github.com/StanfordBDHG/SwiftPackageTemplate/tree/main/CONTRIBUTORS.md) for a full list of all contributors.
+See [CONTRIBUTORS.md](CONTRIBUTORS.md) for a full list of all contributors.
 
 [^1] That is until in a few years this design will be cringe again and I'll start the endevour to build paul-goldschmidt.de, version 4.0.
 
