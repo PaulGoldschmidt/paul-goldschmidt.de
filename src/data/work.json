@@ -1,12 +1,4 @@
 [
-    {
-    "years": "2026–Now",
-    "role": "Machine Learning Intern",
-    "company": "Tesla Inc.",
-    "companyUrl": "https://www.tesla.com/de_de/giga-berlin",
-    "location": "Grünheide, Germany",
-    "description": ""
-  },
   {
     "years": "2025–Now",
     "role": "Software Engineer",
@@ -22,6 +14,14 @@
     "companyUrl": "https://dotreflection.com/",
     "location": "Heidelberg, Germany",
     "description": "Founding of the company and managing day-to-day operations with <a href=\"https://dotreflection.com/products\">three products</a> and multiple employees. Notable clients include the <a href=\"https://www.uni-heidelberg.de/\">University of Heidelberg</a> and <a href=\"https://www.dh-companion.com/\">DHC</a>."
+  },
+  {
+    "years": "2026",
+    "role": "Machine Learning Intern",
+    "company": "Tesla Inc.",
+    "companyUrl": "https://www.tesla.com/de_de/giga-berlin",
+    "location": "Grünheide, Germany",
+    "description": ""
   },
   {
     "years": "2023",
