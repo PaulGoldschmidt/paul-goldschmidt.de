@@ -3,7 +3,7 @@
     "years": "2025–Now",
     "role": "Software Engineer",
     "company": "Stanford University",
-    "companyUrl": "https://bdh.stanford.edu/team",
+    "companyUrl": "https://profiles.stanford.edu/paul-goldschmidt",
     "location": "Stanford, California",
     "description": "Responsible for the refactoring of the <a href=\"https://myheartcounts.stanford.edu/team\">My Heart Counts</a> Study Backend (Typescript, Firebase) rewriting and maintaining 20+ functions of one of the largest cardiovascular health studies in the US, fully <a href=\"https://github.com/StanfordBDHG/MyHeartCounts-Firebase\">open-source.</a>"
   },
