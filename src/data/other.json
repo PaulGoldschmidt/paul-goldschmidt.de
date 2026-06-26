@@ -1,5 +1,11 @@
 [
   {
+    "label": "2026",
+    "title": "Campus-AI x Netlight Hackathon, Hamburg",
+    "description": "Predicting <a href=\"https://github.com/PaulGoldschmidt/netlight-hackathon\">market prices for electicity in Spain</a> with a residual lag approach, learning the correction on 158 features, using gradient-boosting.",
+    "url": "https://www.linkedin.com/posts/flurin-prelle-380120a3_campus-ai-hamburg-x-netlight-something-amazing-ugcPost-7472583195524272128-FCBd/"
+  },
+  {
     "label": "2025",
     "title": "MCP x Quantum Science Hackathon at Stanford University",
     "description": "Build a MCP server ecosystem for quantum circuit design using Qiskit Metal and electromagnetic simulation via Octave/OpenEMS.",
