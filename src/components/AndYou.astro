@@ -19,8 +19,6 @@ import CVEntry from "./CVEntry.astro";
 </Section>
 
 <script>
-  import { WebHaptics } from "web-haptics";
-
   const greetings: [number, number, string[]][] = [
     [5,  7,  ["Early bird? Hoping you catch the worm.", "You're up before the coffee machine, huh?", "The world is still stretching. So are you."]],
     [7,  9,  ["Good morning! Coffee's brewing.", "Rise and shine \u2014 or at least rise.", "Morning!"]],
@@ -153,10 +151,6 @@ import CVEntry from "./CVEntry.astro";
     greetingEl.textContent = getGreeting();
     setFirstVisitIntro();
   });
-
-  const haptics = new WebHaptics();
-  submitBtn.addEventListener("click", () => haptics.trigger("medium"));
-  resetBtn.addEventListener("click", () => haptics.trigger("light"));
 </script>
 
 <style>
