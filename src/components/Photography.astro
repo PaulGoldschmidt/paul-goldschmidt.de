@@ -60,28 +60,3 @@ import photos from "../data/photography.json";
     });
   })();
 </script>
-
-<script>
-  import { WebHaptics } from "web-haptics";
-  const haptics = new WebHaptics();
-  const lightbox = document.getElementById("lightbox");
-
-  document.querySelectorAll("[data-lightbox]").forEach((img) => {
-    img.addEventListener("click", () => {
-      haptics.trigger("medium");
-    });
-  });
-
-  lightbox?.addEventListener("click", (e) => {
-    const lightboxImg = lightbox.querySelector("img");
-    const lightboxSub = lightbox.querySelector(".lightbox-subtitle");
-    if (e.target === lightboxImg || e.target === lightboxSub) return;
-    haptics.trigger("light");
-  });
-
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && lightbox?.classList.contains("active")) {
-      haptics.trigger("light");
-    }
-  });
-</script>
