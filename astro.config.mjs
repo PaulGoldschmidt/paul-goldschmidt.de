@@ -12,6 +12,7 @@ export default defineConfig({
     "/impressum": "/imprint",
     "/datenschutz": "/privacy",
     "/calendar": "/kalender",
+    "/apps": "https://apps.paul-goldschmidt.de",
     "/instagram": "https://www.instagram.com/_paulgoldschmidt/",
     "/twitter": "https://twitter.com/PauIGoldschmidt",
     "/blog": "https://p3g3.de/",
